@@ -1,0 +1,35 @@
+.menu-page{
+  padding: 0 25px;
+  font-family: Corbel;
+  vertical-align: middle;
+}
+.menu-page-title{
+  font-weight: 700;
+  font-size: clamp(48px, calc(1.389vw + 37.33px), 64px);
+  line-height: clamp(52.01px, calc(1.388vw + 41.35px), 68px);
+  letter-spacing: clamp(-0.14px, calc(-0.038vw + 0.15px), -0.58px);
+  text-align: center;
+  margin: 50px 0 50px;
+}
+.menu-page-title:after {
+  content: '';
+  display: block;
+  height: 4px;
+  background: #0c1247;
+  width: 40%;
+  margin: 15px auto 0;
+}    
+.menu-page-description{
+  margin: 0 auto;
+  display: block;
+  max-width: 980px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.37px;
+  border-bottom: 1px #00000029 solid;
+  padding-bottom: 20px;
+  margin-bottom: 48px;
+  color: #1D1D1F;
+}
