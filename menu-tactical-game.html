@@ -6,6 +6,7 @@
     <title>Командная тактическая игра</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/page-dop.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
@@ -76,14 +77,33 @@
             </div>
           </div>
         </li>
-        <li><a href="./menu-masta.html">Места <br>отдыха</a></li>
-        <li><a href="">О нас</a>
+        <li><a href="./menu-masta.html">Места <br>отдыха</a>
         <div class="submenu-panel">
-             <div class="submenu-panel-content">
-              <a class="submenu-panel-content-link" href="./price.html">Цены</a>
-              <a class="submenu-panel-content-link" href="./conatcts.html">Контакты</a>
-             </div>
+          <div class="submenu-panel-content">
+           <a class="submenu-panel-content-link" href="./mesta.html">Беседки</a>
+           <a class="submenu-panel-content-link" href="./mesta.html">Баня</a>
+           <a class="submenu-panel-content-link" href="./mesta.html">Банкетные залы</a>
+           <a class="submenu-panel-content-link" href="./mesta.html">Еда навынос</a>
+           <a class="submenu-panel-content-link" href="./mesta.html">Домики и гостиница (мотель)</a>
           </div>
+        </div>
+        </li>
+        <li><a href="./menu-about.html">О нас</a>
+        <div class="submenu-panel">
+          <div class="submenu-panel-content">
+           <a class="submenu-panel-content-link" href="./about.html">Контакты</a>
+           <a class="submenu-panel-content-link" href="">Сертификаты</a>
+           <a class="submenu-panel-content-link" href="">Акции</a>
+           <a class="submenu-panel-content-link" href="">Отзывы</a>
+           <a class="submenu-panel-content-link" href="">Блог о.б/у</a>
+           <a class="submenu-panel-content-link" href="">Онлайн-оплата</a>
+           <a class="submenu-panel-content-link" href="">Как добраться</a>
+           <a class="submenu-panel-content-link" href="">Вакансии</a>
+          </div>
+        </div>
+        </li>
+        <li>
+          <a href="./price.html">Цены</a>
         </li>
       </ul>
     </div>
@@ -140,6 +160,14 @@
                   </svg>
                 </a>
             </li>
+            <li class="mobile-menu-item" data-submenu="price">
+                <a href="#">Цены
+                  <svg class="icon-header-menu-style">
+                    <use href="./assets/svg/icons.svg#icon-forward-svg"></use>
+                  </svg>
+                </a>
+            </li>
+
 </ul>
 <div class="submenu-panel-mobile" id="tactical-games">
     <div class="submenu-panel-header">
@@ -240,8 +268,11 @@
     </div>
     <div class="submenu-panel-content-mobile">
         <h2 class="submenu-panel-title">Места отдыха</h2>
-        <a href="#">Место 1</a>
-        <a href="#">Место 2</a>
+        <a href="./mesta.html">Беседки</a>
+        <a href="./mesta.html">Баня</a>
+        <a href="./mesta.html">Банкетные залы</a>
+        <a href="./mesta.html">Еда навынос</a>
+        <a href="./mesta.html">Домики и гостиница (мотель)</a>
     </div>
 </div>
 <div class="submenu-panel-mobile" id="about-us">
@@ -261,6 +292,24 @@
         <h2 class="submenu-panel-title">О нас</h2>
         <a href="./price.html">Цены</a>
         <a href="./conatcts.html">Контакты</a>
+    </div>
+</div>
+<div class="submenu-panel-mobile" id="price">
+    <div class="submenu-panel-header">
+        <a href="#" class="submenu-panel-back">
+            <svg>
+            <use href="./assets/svg/icons.svg#icon-back-svg"></use>
+          </svg>
+        </a>
+        <a href="#" class="submenu-panel-close">
+            <svg viewBox="0 0 24 24" width="18" height="18" class="close">
+                <path d="M18.3 5.71a1 1 0 00-1.42 0L12 10.59 7.12 5.71a1 1 0 00-1.42 1.42L10.59 12l-4.88 4.88a1 1 0 001.42 1.42L12 13.41l4.88 4.88a1 1 0 001.42-1.42L13.41 12l4.88-4.88a1 1 0 000-1.41z"/>
+            </svg>
+        </a>
+    </div>
+    <div class="submenu-panel-content-mobile">
+        <h2 class="submenu-panel-title">Цены</h2>
+        <a href="./price.html">Цены</a>
     </div>
 </div>
 </header>

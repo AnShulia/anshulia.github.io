@@ -30,6 +30,7 @@ body {
 }
 .buttons-general:hover {
   transition: all 0.5s ease;
+  transform: scale(1.05);
 }
 .button-blue-style {
   background: #0071e3;
@@ -121,7 +122,6 @@ border: 1px white solid;
     left: 50%;
     transform: translate(-50%);
     width: 100%;
-
 }
 .banner-top-description{
     bottom: 262px; 
@@ -137,6 +137,7 @@ border: 1px white solid;
     bottom: 173px;
 }
  .page-banner-price{
+        
 bottom: 97px;
 }
  .page-banner-price-description{

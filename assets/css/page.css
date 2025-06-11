@@ -187,7 +187,7 @@ body{
   align-items: center;
   font-family: Corbel;
   font-weight: 400;
-  font-size: 32px;
+  font-size:  clamp(15px, calc(8.213vw + -48.07px), 32px);
   line-height: 25px;
   letter-spacing: -0.37px;
   text-align: center;

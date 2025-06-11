@@ -132,7 +132,9 @@ document.querySelectorAll('.toggle-button').forEach((btn, index) => {
 
 }
 //Секция забронировать
+/*
 function sliderZabronirovat() {
+
   const horizontalEl = document.querySelector('.book-slider-horizontal');
   const verticalEl = document.querySelector('.book-slider-vertical');
   const select = document.getElementById('route-select');
@@ -179,6 +181,56 @@ function sliderZabronirovat() {
     select.addEventListener('change', updatePrice);
     count.addEventListener('input', updatePrice);
     updatePrice(); // стартовое обновление
+  }
+}
+  */
+ function sliderZabronirovat() {
+  const horizontalSliders = document.querySelectorAll('.book-slider-horizontal');
+  const verticalSliders = document.querySelectorAll('.book-slider-vertical');
+
+  // Инициализация всех горизонтальных слайдеров
+  horizontalSliders.forEach((el) => {
+    new Swiper(el, {
+      slidesPerView: 1,
+      watchOverflow: false,
+      navigation: {
+        nextEl: el.closest('.horizontal-slider')?.querySelector('.swiper-button-next'),
+        prevEl: el.closest('.horizontal-slider')?.querySelector('.swiper-button-prev'),
+      },
+    });
+  });
+
+  // Инициализация всех вертикальных слайдеров
+  verticalSliders.forEach((el) => {
+    new Swiper(el, {
+      direction: 'vertical',
+      slidesPerView: 5,
+      spaceBetween: 0,
+      watchOverflow: false,
+      navigation: {
+        nextEl: el.closest('.vertical-slider')?.querySelector('.swiper-button-next'),
+        prevEl: el.closest('.vertical-slider')?.querySelector('.swiper-button-prev'),
+      },
+      mousewheel: true,
+    });
+  });
+
+  // Обновление стоимости (если на странице такие поля есть)
+  const select = document.getElementById('route-select');
+  const count = document.getElementById('people-count');
+  const priceDisplay = document.getElementById('total-price');
+
+  if (select && count && priceDisplay) {
+    const updatePrice = () => {
+      const routePrice = parseInt(select.value) || 0;
+      const people = parseInt(count.value) || 0;
+      priceDisplay.textContent = `${routePrice * people} ₽`;
+    };
+
+    select.addEventListener('change', updatePrice);
+    count.addEventListener('input', updatePrice);
+
+    updatePrice(); // начальное значение
   }
 }
 //Секция места отдыха
@@ -588,14 +640,22 @@ function sliderMainAktivnosti(){
         prevEl: '.mySwiperActivnosti .swiper-button-prev',
       },
     });
+    
+const extraNext = document.querySelector('.extra-next');
+  const extraPrev = document.querySelector('.extra-prev');
 
-    document.querySelector('.extra-next').addEventListener('click', () => swiperActivnosti.slideNext());
-    document.querySelector('.extra-prev').addEventListener('click', () => swiperActivnosti.slidePrev());
+  if (extraNext) {
+    extraNext.addEventListener('click', () => {
+      swiperActivnosti.slideNext();
+    });
+  }
 
-    document.querySelector('.extra-prev').addEventListener('click', () => {
-  console.log('prev clicked');
-  swiperActivnosti.slidePrev();
-});
+  if (extraPrev) {
+    extraPrev.addEventListener('click', () => {
+      console.log('prev clicked');
+      swiperActivnosti.slidePrev();
+    });
+  }
 
 
 }
