@@ -1,21 +1,4 @@
-/* Основные стили */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-body {
-  font-family: "Manrope", "Corbel", "Segoe UI", sans-serif;
-}
-html {
-  font-size: 16px;
-}
+
 /*
 header
 */
@@ -44,7 +27,7 @@ header {
   display: flex;
 }
 .menu ul li{
-  padding: 0 20px;
+  padding: 0 clamp(0px, calc(9.662vw + -74.20px), 20px);;
   text-align: center;
   display: flex;
   align-items: center;
@@ -369,12 +352,11 @@ h2 {
 .cards-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 карточки в строке */
-  gap: 12px;
+  gap: 30px;
   padding: clamp(12px, calc(0.694vw + 6.67px), 20px);
 }
 /* Карточка */
 .card {
-  background: #ffffff;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -395,9 +377,7 @@ h2 {
 /* Заголовок */
 .card-title {
   text-shadow: 0px 4px 4px #00000040;
-  /*font-size: 36.72px;*/
   font-size: clamp(18px, 2.5vw, 36.72px);
-  /* font-size: calc(18px + 18.72 * ((100vw - 768px) / 672));*/
   font-weight: 700;
   margin-bottom: 12px;
   color: #1d1d1f;
@@ -414,47 +394,16 @@ h2 {
 }
 /* Блок кнопок */
 .card-buttons {
-  display: flex;
-  align-items: end;
-  gap: 20px;
+    display: flex;
+    align-items: end;
+    gap: 20px;
 }
-/* Кнопка */
-.card-button.learn-more,
-.card-button.add-to-cart {
+.card-buttons a {
   width: 129px;
   height: 36px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Corbel;
-  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.22px;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 30px;
-}
-/* Стиль для "Узнать больше" */
-.card-button.learn-more {
-  background-color: #0071e3;
-  color: #ffffff;
-  border: 2px solid #007bff;
-}
-.card-button.learn-more:hover {
-  background-color: #007bff;
-  color: #ffffff;
-}
-/* Стиль для "Добавить в корзину" */
-.card-button.add-to-cart {
-  background-color: #ffffff;
-  color: #007bff;
-  border: 2px solid #007bff;
-}
-.card-button.add-to-cart:hover {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: #ffffff;
 }
 @media (max-width: 600px) {
   .cards-container {
@@ -526,43 +475,7 @@ SLIDER
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.kvest-btn {
-  display: inline-block;
-  padding: 10px 18px;
-  text-decoration: none;
-  border-radius: 5px;
-  white-space: nowrap;
-}
-.kvest-btn-primary,
-.kvest-btn-secondary{
-  font-family: Corbel;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  letter-spacing: -0.37px;
-  text-align: center;
-  vertical-align: middle;
-}
-.kvest-btn-primary {
-  background: white;
-  color: black;
-  border-radius: 30px;
-  width: 170px;
-}
-.kvest-btn-secondary,
-.main-den-rozhdeniya-text-block-button-add-to-cart {
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-  color: white;
-  font-weight: bold;
-  -webkit-text-stroke: 1px #0000008F;
-  text-shadow:
-    -1px -1px 0 #0000008F,
-     1px -1px 0 #0000008F,
-    -1px  1px 0 #0000008F,
-     1px  1px 0 #0000008F;
+  gap: 20px;
 }
 .kvest-thumb-swiper {
   margin-top: 20px;
@@ -744,6 +657,7 @@ korporativ
     color: #FFFFFF;
     text-align: center;
 }
+
   .main-korporativ,
   .main-den-rozhdeniya{
     background-color: #cccccc;
@@ -751,8 +665,6 @@ korporativ
     background-size: 100% 100%;
     padding-top: 58px;
   }
-  .main-korporativ a,
-  .main-den-rozhdeniya a,
   h2.main-korporativ-text-block-tittle,
   p.main-korporativ-text-block-tittle,
   h2.main-den-rozhdeniya-text-block-tittle{
@@ -800,27 +712,15 @@ korporativ
     gap: 42px;
     margin-top: 79px;
   }
-  .main-korporativ-text-block-button-learn-more,
-  .main-korporativ-text-block-button-add-to-cart,
-  .main-den-rozhdeniya-text-block-button-learn-more{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 170px;
-    height: 44px;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    letter-spacing: -0.37px;
-    border-radius: 30px;
-    text-align: center;
+  .main-korporativ-text-block-button-wrapper .button-border-style{
+    padding: 8px 15px;
   }
-  .main-korporativ-text-block-button-learn-more{
-    background: #0071E3;
+  .main-den-rozhdeniya-text-block svg{
+    fill: white;
+    width: 20px;
+    height: 28px;
   }
-  .main-korporativ-text-block-button-add-to-cart{
-    border: 1px #0066CC solid;
-  }
+
   @media (max-width: 768px){
   .main-korporativ{
     padding-top: 20px;
@@ -945,7 +845,7 @@ FAQ
 }
 .faq-slider-wrapper {
   position: relative;
-  /*padding-left: 65px;*/
+  padding-bottom: 30px;
 }
 .faq-slide-text{
   font-family: Corbel;
@@ -1223,7 +1123,7 @@ margin-top: 15px;
 {
   position: absolute;
   bottom: 0;
-  right: -40px;
+  right: 0;
 }
 }
 

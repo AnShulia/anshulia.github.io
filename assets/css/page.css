@@ -24,6 +24,9 @@
 
 
 
+
+
+
 /**/
 
 @media (max-width: 768px){
@@ -32,7 +35,46 @@ body{
   }
 }
 
+.page-price-banner h1{
+      color: #FFFFFF;
+    font-family: Manrope !important;
+    font-weight: 800 !important;
+    font-size: clamp(64px, calc(6.597vw + 13.33px), 120px) !important;
+    line-height: clamp(60px, calc(5.208vw + 20.00px), 120px) !important;
+    letter-spacing: -0.28px !important;
+    text-align: center !important;
+    vertical-align: middle;
+}
+.extra-prev {
+  z-index: 99;
+}
 /*Навигация, стрелки*/
+.slider-buttons-postition-right-block{
+  height: 37px;
+  margin-right: 5%;
+  position: relative;
+}
+
+.slider-buttons-postition-right-block .swiper-button-prev,
+.slider-buttons-postition-right-block .swiper-button-next{
+ width: 36px;
+  height: 36px;
+  background-color: #D2D2D7A3;
+  border-radius: 50%;
+}
+.slider-buttons-postition-right-block .swiper-button-prev, .swiper-rtl .swiper-button-next{
+  left: auto;
+  right: 60px;
+}
+/**/
+.swiper-slide.faq-slide {
+  overflow-x: hidden;
+}
+.swiper-wrapper {
+  box-sizing: border-box;
+}
+/**/
+
 .after-slider-vip-buttons,
 .faq-slider-controls,
 .book-slider-buttons{
@@ -123,7 +165,7 @@ body{
 }
 .page-banner-description,
 .main-banner-description {
-  font-size: clamp(43.5px, calc(0.725vw + 36.07px), 50px);
+  font-size: clamp(43.5px, calc(0.725vw + 36.07px), 45px);
   line-height: 55px;
   letter-spacing: 0.2px;
   max-width: 1550px;
@@ -152,6 +194,7 @@ body{
   vertical-align: middle;
   border-radius: 30px;
   padding: 18px 12px;
+  color: #000000;
 }
 .page-banner-button-wrapper-one {
   background-color: #db8302;
@@ -161,9 +204,25 @@ body{
   box-shadow: 0px 0px 12.65px 0px #fd9700;
   box-shadow: 0px 0px 21.69px 0px #fd9700;
   box-shadow: 0px 0px 37.95px 0px #fd9700;
+   transition: all 0.5s ease;
+}
+.page-banner-button-wrapper-one:hover{
+   background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
 }
 .page-banner-button-wrapper-two {
   background-color: #f5f5f7;
+  transition: all 0.5s ease;
+}
+.page-banner-button-wrapper-two:hover{
+  background-color: #db8302;
+  box-shadow: 0px 0px 0.9px 0px #fd9700;
+  box-shadow: 0px 0px 1.81px 0px #fd9700;
+  box-shadow: 0px 0px 6.33px 0px #fd9700;
+  box-shadow: 0px 0px 12.65px 0px #fd9700;
+  box-shadow: 0px 0px 21.69px 0px #fd9700;
+  box-shadow: 0px 0px 37.95px 0px #fd9700;
 }
 .page-banner-price {
   font-size: clamp(28px, calc(2.972vw + -9.06px), 48px);
@@ -223,11 +282,24 @@ body{
     box-shadow: none;
     background-color: #0071e3;
     color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  .page-banner-button-wrapper-one:hover{
+border: 1px #2997ff solid;
+background: none;
+box-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
+color: #0071e3;
   }
   .page-banner-button-wrapper-two {
     background: none;
     border: 1px #2997ff solid;
     color: #2997ff;
+  }
+  .page-banner-button-wrapper-two:hover {
+    background: #2997ff;
+    border: 1px #2997ff solid;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
   }
   .page-banner-price,
   .page-banner-price-description {

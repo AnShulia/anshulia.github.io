@@ -1,32 +1,5 @@
 //Слайдеры на страницах
-//Ответы на вопросы
-function sliderFaq(){
-  const swiperFAQ = new Swiper('.mySwiperFAQ', {
-    spaceBetween: 20,
-    breakpoints: {
-    320: {
-      slidesOffsetBefore: 20,
-      slidesPerView: 1,
-    },
-    480: {
-      slidesOffsetBefore: 20,
-      slidesPerView: 4.3,
-    },
-    768: {
-      slidesOffsetBefore: 20,
-      slidesPerView: 4.3,
-    },
-    1220: {
-      slidesOffsetBefore: 64,
-      slidesPerView: 4.5,
-    },
-  },
-    navigation: {
-      nextEl: '.faq-slider-controls .swiper-button-next',
-      prevEl: '.faq-slider-controls .swiper-button-prev',
-    },
-  });
-}
+
 //Секция видео
 function sliderVideoSection() {
   const sliderEl = document.querySelector(".PageVideoSwiper");
@@ -511,34 +484,62 @@ breakpoints: {
   },
 });
 }
-//Секция function slider(){}
+//Ответы на вопросы
+function sliderFaq(){
+  const swiperFAQ = new Swiper('.mySwiperFAQ', {
+    spaceBetween: 20,
+    breakpoints: {
+    320: {
+      slidesOffsetBefore: 20,
+      slidesPerView: 1,
+    },
+    480: {
+      slidesOffsetBefore: 20,
+      slidesPerView: 4.3,
+    },
+    768: {
+      slidesOffsetBefore: 20,
+      slidesPerView: 4.3,
+    },
+    1220: {
+      slidesOffsetBefore: 64,
+      slidesPerView: 4.5,
+    },
+  },
+    navigation: {
+      nextEl: '.main-faq-slider .swiper-button-next',
+      prevEl: '.main-faq-slider .swiper-button-prev',
+    },
+  });
+}
+//Main Новости
 function sliderMainNews(){
   const swiperNEWS = new Swiper('.mySwiperNEWS', {
     spaceBetween: 20,
     breakpoints: {
-        320: {
-          slidesOffsetBefore: 104,
-          slidesPerView: 1.5,
+        320: { 
+          slidesOffsetBefore: 0,
+          slidesPerView: 'auto',
         },
         768: { 
           slidesOffsetBefore: 104,
-          slidesPerView: 1.5,
+          slidesPerView: 'auto',
         },
         1220: {
           slidesOffsetBefore: 220,
-          slidesPerView: 3,
+          slidesPerView: 'auto',
         },
       },
     navigation: {
-      nextEl: '.swiper-button-next-news',
-      prevEl: '.swiper-button-prev-news',
+      nextEl: '.main-slider-news .swiper-button-next',
+      prevEl: '.main-slider-news .swiper-button-prev',
     },
   });
 }
 //Main Квест
 function sliderMainKvest(){
-         
-     const kvestThumbSwiper = new Swiper('.kvest-thumb-swiper', {
+const kvestThumbSwiper = new Swiper('.kvest-thumb-swiper', {
+  autoplay: true,
   spaceBetween: 10,
   slidesPerView: 4,
   freeMode: true,
@@ -550,6 +551,7 @@ function sliderMainKvest(){
 });
 
 const kvestMainSwiper = new Swiper('.kvest-main-swiper', {
+  autoplay: true,
   spaceBetween: 10,
   loop: true,
   navigation: {
@@ -589,6 +591,13 @@ function sliderMainAktivnosti(){
 
     document.querySelector('.extra-next').addEventListener('click', () => swiperActivnosti.slideNext());
     document.querySelector('.extra-prev').addEventListener('click', () => swiperActivnosti.slidePrev());
+
+    document.querySelector('.extra-prev').addEventListener('click', () => {
+  console.log('prev clicked');
+  swiperActivnosti.slidePrev();
+});
+
+
 }
 //Страница цены
 //Слайдер
