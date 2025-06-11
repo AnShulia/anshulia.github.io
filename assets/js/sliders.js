@@ -535,8 +535,9 @@ function sliderMainNews(){
     },
   });
 }
+//Main Квест
 function sliderMainKvest(){
-         document.addEventListener('DOMContentLoaded', () => {
+         
      const kvestThumbSwiper = new Swiper('.kvest-thumb-swiper', {
   spaceBetween: 10,
   slidesPerView: 4,
@@ -564,12 +565,9 @@ kvestMainSwiper.on('slideChange', () => {
   const realIndex = kvestMainSwiper.realIndex;
   kvestThumbSwiper.slideTo(realIndex);
 });
-
-       })
-
 }
+//Main Активности
 function sliderMainAktivnosti(){
-  document.addEventListener('DOMContentLoaded', () => {
     const swiperActivnosti = new Swiper('.mySwiperActivnosti', {
      
       breakpoints: {
@@ -591,7 +589,6 @@ function sliderMainAktivnosti(){
 
     document.querySelector('.extra-next').addEventListener('click', () => swiperActivnosti.slideNext());
     document.querySelector('.extra-prev').addEventListener('click', () => swiperActivnosti.slidePrev());
-  });
 }
 //Страница цены
 //Слайдер
