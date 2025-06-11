@@ -121,7 +121,7 @@ li:hover .submenu-panel {
 }
 /* Исправленный селектор для хедера при ховере */
 header:has(.menu ul li:hover) {
-    background-color: #fafafc;
+    background-color: #fff;
     color: #000;
 }
 /* Исправленные стили для ссылок и иконок при ховере */
@@ -149,7 +149,6 @@ header:has(.menu ul li:hover) .icon-header-style {
 .hamburger {
     display: none;
 }
-
 @media (max-width: 768px) {
   body.no-scroll {
     overflow: hidden;
@@ -294,7 +293,6 @@ header.light .hamburger span,
   font-size: 35px;
 }
 }
-
 .col-w{
   color: #FFFFFF;
 }
@@ -316,11 +314,12 @@ header.light .hamburger span,
   vertical-align: middle;
 }
 .main-banner-text-wrapper .page-banner-description{
-  /* margin-top: clamp(250px, calc(-9.81vw + 398.35px), 800px) !important;*/
- margin-top: clamp(250px, calc(1000px - 0.45 * 100vw), 450px);
+ /*margin-top: clamp(250px, calc(1000px - 0.45 * 100vw), 450px);*/
+ margin-top: clamp(350px, calc(1000px - 0.45 * 100vw), 450px);
 }
 .main-banner-text-wrapper .page-banner-price{
   font-size: clamp(14px, calc(1.563vw + 2.00px), 32px) !important;
+  /*margin-top: 90px;*/
 }
 @media (max-width: 768px) {
 .col-w{
@@ -345,9 +344,6 @@ header.light .hamburger span,
 }
 }
 
-
-
-
 /**/
 h2 {
   font-family: Corbel;
@@ -362,11 +358,7 @@ h2 {
 @media (max-width: 768px){
   h2 {
     font-size: 35px;
-  }
-  body{
-    border: 1px red solid;
-  }
-  
+  } 
 }
 /*
 СЕКЦИЯ 
@@ -471,6 +463,166 @@ h2 {
 }
 /*
 SLIDER
+Квест
+*/
+.main-slider-kvest svg,
+.main-den-rozhdeniya-text-block-button-add-to-cart svg{
+  fill: white;
+  width: 20px;
+  height: 28px;
+}
+.swiper-button-prev.kvest-prev,
+.swiper-button-next.kvest-next{
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black !important;
+      border-radius: 50px;
+  width: 36px !important;
+  height: 36px !important;
+  background-color: #d2d2d7a3 !important;
+  color: #0000008f;
+  cursor: pointer;
+  margin-top: 0 !important;
+  top: 0 !important;
+}
+.kvest-main-swiper {
+  width: 100%;
+  height: 692px;
+  position: relative;
+}
+.kvest-banner-content-title{
+  font-family: Corbel;
+  font-weight: 700;
+  font-size: 51.63px;
+  line-height: 60px;
+  letter-spacing: -0.28px;
+  text-align: center;
+  vertical-align: middle;
+  color: #F5F5F7;
+  white-space: nowrap;
+}
+.kvest-main-swiper img {
+  width: 100%;
+  height: 100%;
+}
+.kvest-banner-content {
+  position: absolute;
+  top: 72.8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.kvest-banner-content .icon-daleye-style{
+  color: white;
+}
+.kvest-banner-buttons {
+  margin-top: 29px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.kvest-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.kvest-btn-primary,
+.kvest-btn-secondary{
+  font-family: Corbel;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -0.37px;
+  text-align: center;
+  vertical-align: middle;
+}
+.kvest-btn-primary {
+  background: white;
+  color: black;
+  border-radius: 30px;
+  width: 170px;
+}
+.kvest-btn-secondary,
+.main-den-rozhdeniya-text-block-button-add-to-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  font-weight: bold;
+  -webkit-text-stroke: 1px #0000008F;
+  text-shadow:
+    -1px -1px 0 #0000008F,
+     1px -1px 0 #0000008F,
+    -1px  1px 0 #0000008F,
+     1px  1px 0 #0000008F;
+}
+.kvest-thumb-swiper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.kvest-thumb-swiper .swiper-slide {
+  width: 417px;
+  height: 236px;
+  cursor: pointer;
+}
+.kvest-thumb-swiper img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.kvest-thumb-swiper-preview-text{
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  font-family: Corbel;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 18px;
+  letter-spacing: -0.22px;
+  vertical-align: middle;
+  color: #FFFFFF;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .kvest-main-swiper {
+  height: 650px;
+}
+.kvest-banner-content-title{
+  font-size: 36px;
+}
+.kvest-thumb-swiper {
+    margin-top: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+.kvest-thumb-swiper-preview-text{
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  font-family: Corbel;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 18px;
+  letter-spacing: -0.22px;
+  vertical-align: middle;
+  color: black;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-align: left;
+}
+}
+
+/*
+SLIDER
 ACTIVNOSTI
 */
 .rotate {
@@ -555,7 +707,6 @@ ACTIVNOSTI
   margin-top: 0 !important;
   top: 0 !important;
 }
-
 .swiper-button-next:after,
 .swiper-button-prev:after {
   font-family: swiper-icons;
@@ -725,6 +876,43 @@ den-rozhdeniya
   }
 /*
 SECTION
+Новости
+*/
+.main-slider-news{
+  padding-bottom: 103px;
+}
+.mySwiperNEWS{
+  margin-top: 29px;
+  
+}
+.mySwiperNEWS .swiper-slide{
+  width: 550px !important;
+}
+.mySwiperNEWS .swiper-slide img{
+  border-radius: 30px;
+}
+.news-slide-text{
+  max-width: 410px;
+  margin: 32px auto;
+}
+.news-slide-text-title,
+.news-slide-text-description{
+  font-family: Corbel;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: -0.37px;
+  vertical-align: middle;
+}
+.news-slide-text-title{
+  color: black;
+  margin-bottom: 15px;
+}
+.news-slide-text-description{
+  color:#000000b8;
+}
+/*
+SECTION
 FAQ
 */
  .main-faq-slider {
@@ -851,8 +1039,10 @@ footer .footer-social-links-wrapper h3 {
   padding-bottom: 20px;
 }
 footer .footer-social--links svg {
-  width: 90px;
-  height: 90px;
+  width: clamp(40px, calc(4.340vw + 6.67px), 90px);
+  height: clamp(40px, calc(4.340vw + 6.67px), 90px);;
+ /* width: 90px;
+  height: 90px;*/
 }
 footer .footer-social--links {
   display: flex;
@@ -945,7 +1135,6 @@ footer .footer-grid {
   max-width: 992px;
   padding-bottom: 31px;
 }
-
 @media (max-width: 768px){
 footer .footer-wrapper{
   padding: 0 20px 24px;

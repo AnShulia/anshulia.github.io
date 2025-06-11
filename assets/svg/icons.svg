@@ -37,8 +37,14 @@
     <symbol id="icon-forward-svg" viewBox="0 0 24 24">  
       <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
     </symbol>
-     
+    <!--Иконка инфо -->
+    <symbol id="icon-info-svg" viewBox="0 0 20 20">
+      <path fill="currentColor" d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7s-7-3.1-7-7s3.1-7 7-7m0-1C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8"/>
+      <path fill="currentColor" d="M7 6h2v7H7zm0-3h2v2H7z"/></svg>
+    </symbol>
+    <!--Иконка стрелка вниз -->
+    <symbol id="simple-line-icons--arrow-down" viewBox="0 0 1024 1024">
+      <path fill="currentColor" d="M8.2 275.4c0-8.6 3.4-17.401 10-24.001c13.2-13.2 34.8-13.2 48 0l451.8 451.8l445.2-445.2c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48L542 775.399c-13.2 13.2-34.8 13.2-48 0l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199"/>
+    </symbol>
 
-
- 
 </svg>
