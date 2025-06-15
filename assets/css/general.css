@@ -17,7 +17,7 @@ body {
 /*Все кнопки круглые, есть прозрачные с бордером, есть синие.*/
 /*Синяя*/
 .buttons-general {
-  border-radius: 30px;
+  border-radius: 50px;
   font-family: Corbel;
   font-weight: 400;
   text-align: center;
@@ -84,14 +84,84 @@ border: 1px white solid;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-/*Размер 170х44*/
+
+.buttons-size130 {
+  width: 130px;
+  height: 44px;
+  font-size: 17px;
+}
 .buttons-size170 {
   width: 169px;
   height: 44px;
 }
-/*Кнопки выбрать, добавить в корзину, подробнее*/
+.buttons-size179-1,
+.buttons-size179-2{
+  width: 179px;
+  height: 65px;
+  font-size: 32px;
+}
+@media (max-width: 768px){
+  .buttons-size179-1{
+    width: 114px;
+    height: 38px;
+    font-size: 20px;
+  }
+  .buttons-size179-2{
+  width: 98px;
+  height: 25px;
+  font-size: 20px;
+  }
+}
+/**/
+.after-quest .slider-wrapper,
+.after-quest .swiper-wrapper{
+  margin-top: 20px;
+}
+.after-slide-image-wrapper550 {
+ /* width: 550px !important;*/
+  height: 550px;
+  width: clamp(462px, calc(7.639vw + 403.33px), 550px);
+  /*height: clamp(462px, calc(7.639vw + 403.33px), 550px);*/
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.after-slide-image-wrapper550 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+@media (max-width: 768px){
+
+}
+/*Кнопки слайдера*/
+.after-slider-buttons-wraper{
+  margin-top: 40px;
+  min-height: 47px;
+  position: relative;
+  margin-right: 120px;
+}
+.after-slider-buttons-wraper .swiper-button-next, 
+.after-slider-buttons-wraper .swiper-button-prev{
+    width: 36px;
+    height: 36px;
+    background-color: #D2D2D7A3;
+    border-radius: 50%;
+}
+.after-slider-buttons-wraper .swiper-button-prev, 
+.swiper-rtl .swiper-button-next{
+    left: auto;
+    right: 60px;
+}
 
 
+
+
+
+/**/
 
 /*140 price, 160 mesta, 200 kvadro/kvest, */
 /*h1*/
@@ -127,6 +197,7 @@ border: 1px white solid;
     bottom: 262px; 
     font-size: clamp(27px, calc(8.696vw + -39.78px), 45px);
     line-height: clamp(27px, calc(13.527vw + -76.88px), 55px); 
+    max-width: 90%;
     
 }
 .banner-top-buttons-wrapper{
@@ -136,17 +207,20 @@ border: 1px white solid;
     gap: 2.76%;
     bottom: 173px;
 }
- .page-banner-price{
-        
-bottom: 97px;
+.banner-top .page-banner-price{
+  font-size: clamp(14px, calc(7.729vw + -45.36px), 30px);    
+  bottom: 97px;
 }
- .page-banner-price-description{
-    bottom: 27px;
+.page-banner-price-description{
+  bottom: 27px;
 }
 @media (max-width: 768px){
- .banner-top { border: 1px red solid;
+  .liner{
+ background: linear-gradient(180deg, #0C1247 0%, #28337D 28%, #505DAD 46%, #7D8ED1 60%, #AEBCE6 75%, #EFECFF 90%, #FFFFFF 100%);
+}
+ .banner-top {
         height: 660px !important;
-        background: linear-gradient(180deg, #0C1247 0%, #28337D 28%, #505DAD 46%, #7D8ED1 60%, #AEBCE6 75%, #EFECFF 90%, #FFFFFF 100%);
+       
     } 
     .banner-top-description{
     bottom: 180px;
@@ -154,11 +228,12 @@ bottom: 97px;
 .banner-top-buttons-wrapper{
     bottom: 100px;
 }
- .page-banner-price{
-bottom: 30px;
+  .banner-top .page-banner-price{
+bottom: 50px;
 }
     .banner-top .page-banner-price-description{
     bottom: 0px;
     color: #FD9700;
+    width: 90%;
 }
 }

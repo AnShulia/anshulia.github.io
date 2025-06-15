@@ -96,22 +96,33 @@ function sliderVideoSection() {
 }     
 //Секция базы
 function sliderBaseSection(){
+  /*
 const baseSwiper = new Swiper('.base-swiper', {
   spaceBetween: 20,
   breakpoints: {
-    0: {
-      slidesOffsetBefore: 160, // для мобилок до 768px
-      slidesPerView: 1.6,
+    0:{
+      slidesOffsetBefore: 90,
+      slidesPerView: 1.1,
     },
     768: {
-      slidesOffsetBefore: 200, // начиная с 768px
+      slidesOffsetBefore: 160, // начиная с 768px
+      slidesPerView: 'auto',
+    },
+     769: {
+    slidesOffsetBefore: 20,
+    slidesPerView: 1,
+    },
+    1000:{
+      slidesOffsetBefore: 160,
       slidesPerView: 1.5,
     },
-    1024:{
-      slidesOffsetBefore: 300,
+    1200:{
+      slidesOffsetBefore: 200,
+      slidesPerView: 1.5,
     },
     1440: {
       slidesOffsetBefore: 400,
+      slidesPerView: 1.8,
     }
   },
   on: {
@@ -124,12 +135,147 @@ const baseSwiper = new Swiper('.base-swiper', {
   }
 });
 
-document.querySelectorAll('.toggle-button').forEach((btn, index) => {
-  btn.addEventListener('click', () => {
-    baseSwiper.slideTo(index);
+const baseToggleSwiper = new Swiper('.base-toggle-swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  freeMode: true,
+});
+const buttons = document.querySelectorAll('.toggle-button');
+
+buttons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    const index = parseInt(button.dataset.slide, 10);
+    baseSwiper.slideTo(index); // mainSlider — твой основной Swiper
+    // Активный класс
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    centerSlideSmart(index);
   });
 });
+function centerSlideSmart(index) {
+  const slide = baseToggleSwiper.slides[index];
+  const slideWidth = slide.offsetWidth;
+  const container = baseToggleSwiper.el;
+  const containerWidth = container.offsetWidth;
+  const contentWidth = baseToggleSwiper.wrapperEl.scrollWidth;
 
+  const offsetLeft = slide.offsetLeft;
+  const scrollTo = offsetLeft - (containerWidth / 2) + (slideWidth / 2);
+
+  // Условие: не скроллить за начало и конец контента
+  const maxScroll = contentWidth - containerWidth;
+  const finalScroll = Math.max(0, Math.min(scrollTo, maxScroll));
+
+  container.scrollTo({
+    left: finalScroll,
+    behavior: 'smooth'
+  });
+}
+
+function toggleBaseWidth(){
+  const swiperWrapper = document.querySelector('.base-toggle-swiper .swiper-wrapper');
+  const buttons = swiperWrapper.querySelectorAll('.toggle-button');
+  const toggleWrapper = document.querySelector('.toggle-wrapper');
+
+   if (buttons.length > 2) {
+    toggleWrapper.style.width = '';
+  } else {
+    toggleWrapper.style.width = 'max-content'; // или '100%' или 'auto' — по умолчанию
+  }
+}
+toggleBaseWidth();
+*/
+const baseSwiper = new Swiper('.base-swiper', {
+    spaceBetween: 20,
+    breakpoints: {
+      0: {
+        slidesOffsetBefore: 90,
+        slidesPerView: 1.1,
+      },
+      768: {
+        slidesOffsetBefore: 160,
+        slidesPerView: 'auto',
+      },
+      769: {
+        slidesOffsetBefore: 20,
+        slidesPerView: 1,
+      },
+      1000: {
+        slidesOffsetBefore: 160,
+        slidesPerView: 1.5,
+      },
+      1200: {
+        slidesOffsetBefore: 200,
+        slidesPerView: 1.5,
+      },
+      1440: {
+        slidesOffsetBefore: 400,
+        slidesPerView: 1.8,
+      }
+    },
+    on: {
+      slideChange: function () {
+        const index = this.activeIndex;
+        document.querySelectorAll('.toggle-button').forEach((btn, i) => {
+          btn.classList.toggle('active', i === index);
+        });
+      }
+    }
+  });
+
+  const baseToggleSwiper = new Swiper('.base-toggle-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    freeMode: true,
+  });
+
+  const buttons = document.querySelectorAll('.toggle-button');
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const index = parseInt(button.dataset.slide, 10);
+      baseSwiper.slideTo(index);
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      centerSlideSmart(index);
+    });
+  });
+
+  function centerSlideSmart(index) {
+    const slide = baseToggleSwiper.slides[index];
+    const slideWidth = slide.offsetWidth;
+    const container = baseToggleSwiper.el;
+    const containerWidth = container.offsetWidth;
+    const contentWidth = baseToggleSwiper.wrapperEl.scrollWidth;
+
+    const offsetLeft = slide.offsetLeft;
+    const scrollTo = offsetLeft - (containerWidth / 2) + (slideWidth / 2);
+
+    const maxScroll = contentWidth - containerWidth;
+    const finalScroll = Math.max(0, Math.min(scrollTo, maxScroll));
+
+    container.scrollTo({
+      left: finalScroll,
+      behavior: 'smooth'
+    });
+  }
+
+  function toggleBaseWidth() {
+    const swiperWrapper = document.querySelector('.base-toggle-swiper .swiper-wrapper');
+    const toggleWrapper = document.querySelector('.toggle-wrapper');
+    if (!swiperWrapper || !toggleWrapper) return;
+     const buttons = swiperWrapper.querySelectorAll('.toggle-button');
+
+    if (buttons.length > 2) {
+    toggleWrapper.style.width = '';
+  } else {
+    toggleWrapper.style.width = 'max-content'; // или '100%' или 'auto' — по умолчанию
+  }
+}
+ toggleBaseWidth();
 }
 //Секция забронировать
 /*
@@ -235,37 +381,13 @@ function sliderZabronirovat() {
 }
 //Секция места отдыха
 function sliderMesta(){
-new Swiper('.after-slider-vip', {
-    spaceBetween: 20,
-    breakpoints: {
-    320: {
-      slidesOffsetBefore: 0,
-      slidesPerView: 1,
-    },
-    480: {
-      slidesOffsetBefore: 104,
-      slidesPerView: 1.4,
-    },
-    768: {
-      slidesOffsetBefore: 50,
-      slidesPerView: 1.4,
-    },
-    1000: {
-      slidesPerView: 2,
-    },
-    1220: {
-      slidesOffsetBefore: 120,
-      slidesPerView: 3.2,
-    },
-  },
-    navigation: {
-      nextEl: '.after-slider-vip .swiper-button-next',
-      prevEl: '.after-slider-vip .swiper-button-prev',
-    },
-  });
-  new Swiper('.after-slider-bannyy-kompleks', {
-    spaceBetween: 20,
-    breakpoints: {
+
+  new Swiper('.after-slider-vip', {
+  watchOverflow: true,
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  
+  breakpoints: {
     320: {
       slidesOffsetBefore: 0,
       slidesPerView: 1,
@@ -283,15 +405,72 @@ new Swiper('.after-slider-vip', {
       slidesPerView: 2,
     },
     1220: {
-      slidesOffsetBefore: 120,
+      slidesOffsetBefore: 220,
       slidesPerView: 3.2,
     },
   },
-    navigation: {
-      nextEl: '.after-slider-bannyy-kompleks .swiper-button-next',
-      prevEl: '.after-slider-bannyy-kompleks .swiper-button-prev',
+  navigation: {
+    nextEl: '.after-slider-vip .swiper-button-next',
+    prevEl: '.after-slider-vip .swiper-button-prev',
+  },
+});
+/*
+  new Swiper('.after-slider', {
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  watchOverflow: true,
+  navigation: {
+    nextEl: '.after-slider .swiper-button-next',
+    prevEl: '.after-slider .swiper-button-prev',
+  },
+  breakpoints: {
+    320: {
+      slidesOffsetBefore: 16,
     },
+    768: {
+      slidesOffsetBefore: 104,
+    },
+    1024: {
+      slidesOffsetBefore: 150,
+    },
+    1440: {
+      slidesOffsetBefore: 220,
+    },
+    1920: {
+      slidesOffsetBefore: 220,
+    },
+  }
+});
+
+ new Swiper('.after-slider-shater', {
+    slidesPerView: 'auto',
+  spaceBetween: 20,
+  watchOverflow: true,
+  breakpoints: {
+    320: {
+      slidesOffsetBefore: 16,
+    },
+    768: {
+      slidesOffsetBefore: 104,
+    },
+    1024: {
+      slidesOffsetBefore: 150,
+    },
+    1440: {
+      slidesOffsetBefore: 220,
+    },
+    1920: {
+      slidesOffsetBefore: 220,
+    },
+  },
+    navigation: {
+      nextEl: '.after-slider-shater .swiper-button-next',
+      prevEl: '.after-slider-shater .swiper-button-prev',
+    },
+    
   });
+  */
+/*
   new Swiper('.after-slider-shater', {
     spaceBetween: 20,
     breakpoints: {
@@ -322,28 +501,27 @@ new Swiper('.after-slider-vip', {
     },
     
   });
+  */
+  /*
   new Swiper('.after-slider-besedki', {
-    spaceBetween: 20,
-    breakpoints: {
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  watchOverflow: true,
+  breakpoints: {
     320: {
-      slidesOffsetBefore: 0,
-      slidesPerView: 1,
-    },
-    480: {
-      slidesOffsetBefore: 104,
-      slidesPerView: 1.4,
+      slidesOffsetBefore: 16,
     },
     768: {
-      slidesOffsetBefore: 50,
-      slidesPerView: 1.4,
+      slidesOffsetBefore: 104,
     },
-    1000: {
-      slidesOffsetBefore: 120,
-      slidesPerView: 2,
+    1024: {
+      slidesOffsetBefore: 150,
     },
-    1220: {
-      slidesOffsetBefore: 120,
-      slidesPerView: 3.2,
+    1440: {
+      slidesOffsetBefore: 220,
+    },
+    1920: {
+      slidesOffsetBefore: 220,
     },
   },
     navigation: {
@@ -352,8 +530,38 @@ new Swiper('.after-slider-vip', {
     },
     
   });
+  */
+ document.querySelectorAll('.after-slider').forEach((slider) => {
+  new Swiper(slider, {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    watchOverflow: true,
+    navigation: {
+      nextEl: slider.querySelector('.swiper-button-next'),
+      prevEl: slider.querySelector('.swiper-button-prev'),
+    },
+    breakpoints: {
+      320: {
+        slidesOffsetBefore: 16,
+      },
+      768: {
+        slidesOffsetBefore: 104,
+      },
+      1024: {
+        slidesOffsetBefore: 150,
+      },
+      1440: {
+        slidesOffsetBefore: 180,
+      },
+      1920: {
+        slidesOffsetBefore: 220,
+      },
+    }
+  });
+});
 }
 //Секция попробывать после
+
 function sliderAfterTry(){
 const pageAfterTryWrapperSwiper = new Swiper('.after-try-swiper', {
     breakpoints: {
@@ -378,8 +586,8 @@ const pageAfterTryWrapperSwiper = new Swiper('.after-try-swiper', {
     },
   },
     navigation: {
-      nextEl: '.page-after-try-buttons .swiper-button-next',
-      prevEl: '.page-after-try-buttons .swiper-button-prev',
+      nextEl: '.after-try-swiper .swiper-button-next',
+      prevEl: '.after-try-swiper .swiper-button-prev',
     },
 
   });
@@ -407,10 +615,6 @@ function sliderDopGame(){
       slidesPerView: 4,
     },
   },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
   navigation: {
     nextEl: '.book-button-next',
     prevEl: '.book-button-prev'
@@ -420,6 +624,7 @@ function sliderDopGame(){
 
 function sliderInteres(){
 const swiper = new Swiper('.page-interest-slider', {
+  /*
   slidesPerView: 4.5,
   spaceBetween: 20,
   breakpoints: {
@@ -439,7 +644,9 @@ const swiper = new Swiper('.page-interest-slider', {
     1440: {
       slidesPerView: 4.5,
     },
-  },
+  },*/
+  slidesPerView: 'auto',
+  spaceBetween: 15,
   navigation: {
     nextEl: '.page-interest-slider .swiper-button-next',
     prevEl: '.page-interest-slider .swiper-button-prev',
@@ -470,7 +677,9 @@ if (addToCartBtn) {
   });
 }
 }
+
 //Секция сценарии
+/*
 function sliderScenarii(){
      const ekipirovkaSlider = new Swiper('.ekipirovka-slider', {
     spaceBetween: 20,
@@ -500,7 +709,8 @@ function sliderScenarii(){
       prevEl: '.ekipirovka-slider .swiper-button-prev',
     },
   });
-}
+}*/
+/*
 //Секция ДопЭкипировка
 function sliderEkipirovkaDopPay(){
  const dopOborSlider = new Swiper('.page-dop-obor-slider', {
@@ -536,6 +746,7 @@ breakpoints: {
   },
 });
 }
+*/
 //Ответы на вопросы
 function sliderFaq(){
   const swiperFAQ = new Swiper('.mySwiperFAQ', {
@@ -664,9 +875,12 @@ const extraNext = document.querySelector('.extra-next');
 function sliderPagePrice() {
   // === Color slider ===
 document.querySelectorAll('.color-slider').forEach((slider, index) => {
+  if (slider.classList.contains('swiper-initialized')) return; // <-- защита от двойной инициализации
   new Swiper(slider, {
     loop: true,
     slidesPerView: 1,
+    nested: true,
+    touchStartPreventDefault: false,
     pagination: {
       el: slider.querySelector('.swiper-pagination'),
       clickable: true,
@@ -782,8 +996,8 @@ sliderMesta();
 sliderAfterTry();
 sliderDopGame();
 sliderInteres();
-sliderScenarii();
-sliderEkipirovkaDopPay();
+//sliderScenarii();
+//sliderEkipirovkaDopPay();
 //Страница цены
 sliderPagePrice();
 

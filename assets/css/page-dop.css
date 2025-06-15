@@ -1,4 +1,6 @@
 .menu-page{
+  margin: 0 auto;
+  max-width: clamp(1220px, calc(106.280vw + 403.77px), 1440px);
   padding: 0 25px;
   font-family: Corbel;
   vertical-align: middle;

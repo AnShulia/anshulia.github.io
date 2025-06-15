@@ -117,12 +117,13 @@ function accordionPricePage(){
 
       header.style.cursor = "pointer";
 
-      // Открываем первую секцию в каждом аккордеоне
       if (sectionIndex === 0) {
-        content.classList.add("open");
-        content.style.height = content.scrollHeight + "px";
-        svg.classList.add("rotated");
-      }
+  content.classList.add("open");
+  setTimeout(() => {
+    content.style.height = content.scrollHeight + "px";
+  }, 0);
+  svg.classList.add("rotated");
+}
 
       header.addEventListener("click", () => {
         const isOpen = content.classList.contains("open");
@@ -157,11 +158,11 @@ function accordionPricePage(){
   });
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
 initMobileMenu();
 accordionFooter();
-sliderFaq();
-accordionPricePage();
 
 }, false);
+window.addEventListener('load', () => {
+  accordionPricePage();
+});
