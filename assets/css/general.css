@@ -47,9 +47,12 @@ body {
 }
 /*C синим бордером*/
 .button-border-style {
-  background: none;
+   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #0066cc;
   color: #0066cc;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 .button-border-style:hover {
   background-color: #007bff;
@@ -71,6 +74,12 @@ body {
 }
 /*Нет фона*/
 .button-not-background{
+  background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+
 gap: 6px;
 color: white;
 font-weight: bold;
@@ -80,11 +89,13 @@ padding: 8px 15px;
 }
 .button-not-background:hover{
 border: 1px white solid;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+background: white;
+color: #000000;
+text-shadow: none;
 }
-
+.button-not-background:hover svg{
+  fill: #000000;
+}
 .buttons-size130 {
   width: 130px;
   height: 44px;

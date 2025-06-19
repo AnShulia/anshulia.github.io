@@ -157,10 +157,54 @@ function accordionPricePage(){
     });
   });
 }
+/*
+function openaAnswer(){
+  const faqButtons = document.querySelectorAll('.faq-slide-button');
 
+    faqButtons.forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const slide = button.closest('.faq-slide');
+        
+        // Закрыть другие ответы
+        document.querySelectorAll('.faq-slide').forEach(s => {
+          console.log(s)
+          if (s !== slide) {
+            s.classList.remove('open');
+          }
+        });
+      // Переключить текущий
+        slide.classList.toggle('open');
+        
+      });
+    });
+}
+*/
+function openaAnswer() {
+  const faqButtons = document.querySelectorAll('.faq-slide-button');
+
+  faqButtons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const slide = button.closest('.faq-slide');
+      const isOpen = slide.classList.contains('open');
+
+      // Закрываем все слайды
+      document.querySelectorAll('.faq-slide').forEach(s => s.classList.remove('open'));
+
+      // Если слайд не был открыт — открываем его с задержкой
+      if (!isOpen) {
+        setTimeout(() => {
+          slide.classList.add('open');
+        }, 50); // 50 мс — достаточно для восприятия, но можно и 100 мс
+      }
+    });
+  });
+}
 document.addEventListener('DOMContentLoaded', function() {
 initMobileMenu();
 accordionFooter();
+openaAnswer();
 
 }, false);
 window.addEventListener('load', () => {

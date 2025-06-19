@@ -183,6 +183,7 @@ body{
 }
 .page-banner-button-wrapper-one,
 .page-banner-button-wrapper-two {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;

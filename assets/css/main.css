@@ -282,9 +282,10 @@ header.light .hamburger span,
 }
 .main-banner-background{
   background-color: #cccccc;
-  background-size: 100% 100%;
+  background-size: 100% 100% /*contain*/;
   height: 806px;
-  background-position: top left;
+ /*height: 100%;     */
+  background-position: left top;
   background-repeat: no-repeat;
 }
 .main-banner-text-wrapper h1{
@@ -688,18 +689,18 @@ korporativ
   p.main-korporativ-text-block-tittle{
     margin-top: 12px;
     font-weight: 800;
-    font-size: 28px;
+    font-size: 34px;
     line-height: 32px;
     letter-spacing: 0.2px;
-    -webkit-text-stroke: 1.2px #000000; /* Толщина и цвет обводки */
+    -webkit-text-stroke: 1.1px #000000;
   }
   .main-korporativ-text-block-description{
     font-family: Corbel;
-    font-weight: 400;
+    font-weight: 800;
     font-size: 24px;
     line-height: 22px;
     letter-spacing: -0.22px;
-    -webkit-text-stroke: 0.8px #000000; /* Толщина и цвет обводки */
+    -webkit-text-stroke: 0.5px #000000;
     display: block;
     margin: 45px auto 0 auto;
     max-width: 469px;
@@ -714,7 +715,7 @@ korporativ
     margin-top: 79px;
   }
   .main-korporativ-text-block-button-wrapper .button-border-style{
-    padding: 8px 15px;
+    padding: 10.5px 15px;
   }
   .main-den-rozhdeniya-text-block svg{
     fill: white;
@@ -787,9 +788,12 @@ SECTION
   
 }
 .mySwiperNEWS .swiper-slide{
+  text-align: center;
   width: 550px !important;
 }
 .mySwiperNEWS .swiper-slide img{
+  width: 412px;
+  height: 412px;
   border-radius: 30px;
 }
 .news-slide-text{
@@ -860,7 +864,8 @@ FAQ
 }
 .faq-slide {
   /*width: 405px !important;*/
-  height: 240px !important;
+ /* height: 240px !important;*/
+  min-height: 240px;
   background-color: #f2f2f2;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -870,6 +875,10 @@ FAQ
   font-size: 18px;
   font-weight: 500;
   position: relative;
+}
+
+.faq-slide.open {
+  max-height: 1000px; 
 }
 .faq-slide-button{
   width: 36px;
@@ -882,6 +891,27 @@ FAQ
   position: absolute;
   bottom: /*24px*/ clamp(5px, calc(1.649vw + -7.67px), 24px);
   right: 24px;
+  border: none;
+}
+.faq-slide-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.9s ease;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 0 10px;
+  color: #333;
+  max-width: 250px;
+}
+.faq-slide.open .faq-slide-answer {
+  max-height: 500px; 
+  margin-top: 12px;
+}
+.faq-slide-button svg {
+  transition: transform 0.5s ease;
+}
+.faq-slide.open .faq-slide-button svg {
+  transform: rotate(-90deg);
 }
 /* Стрелки управления */
 .faq-slider-controls {
@@ -941,7 +971,15 @@ footer .footer-social-links-wrapper h3 {
 }
 footer .footer-social--links svg {
   width: clamp(40px, calc(4.340vw + 6.67px), 90px);
-  height: clamp(40px, calc(4.340vw + 6.67px), 90px);;
+  height: clamp(40px, calc(4.340vw + 6.67px), 90px);
+  
+ /* width: 90px;
+  height: 90px;*/
+}
+footer .footer-social--links svg:hover {
+   transition: all 0.5s ease;
+  transform: scale(1.2);
+
  /* width: 90px;
   height: 90px;*/
 }
