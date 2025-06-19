@@ -366,7 +366,7 @@
                     ✔ и многие другие.
                 </p>
               </div>
-              <button class="play-button" aria-label="Play video"></button>
+              <button class="play-button video-popup-open" aria-label="Play video" data-video="https://www.youtube.com/watch?v=uGspCSZfjOE&pp=0gcJCb4JAYcqIYzv"></button>
             </div>
             <div class="swiper-slide swiper-slide-page-video">
               <img src="./assets/img/img-page/video1.jpg" alt="" />
@@ -437,6 +437,17 @@
       </div>
       
 </section>
+<!-- Попап -->
+<div class="video-popup-overlay" id="videoPopup">
+  <div class="video-popup">
+    <button class="video-popup-close">&times;</button>
+    
+    <!-- Видео: YouTube пример -->
+    <div class="video-popup-content">
+       <iframe src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
 <!-- Секция особенности -->
 <section class="quad-features">
       <div class="quad-features-content">

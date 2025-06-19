@@ -180,6 +180,7 @@ function openaAnswer(){
     });
 }
 */
+//Открытие вопрос-ответ
 function openaAnswer() {
   const faqButtons = document.querySelectorAll('.faq-slide-button');
 
@@ -201,10 +202,40 @@ function openaAnswer() {
     });
   });
 }
+//Открытие видео поп-ап
+function openaVideoPopUp(){
+ const popup = document.getElementById('videoPopup');
+  const popupIframe = popup.querySelector('iframe');
+  const closeBtn = popup.querySelector('.video-popup-close');
+
+  // навесим на все кнопки внутри слайдов
+  document.querySelectorAll('.video-popup-open').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const videoUrl = btn.dataset.video;
+      popupIframe.src = videoUrl + '?autoplay=1';
+      popup.style.display = 'flex';
+    });
+  });
+
+  // закрытие
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    popupIframe.src = ''; // остановка видео
+  });
+
+  // закрытие по фону
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+      popupIframe.src = '';
+    }
+  });
+}
 document.addEventListener('DOMContentLoaded', function() {
 initMobileMenu();
 accordionFooter();
 openaAnswer();
+openaVideoPopUp();
 
 }, false);
 window.addEventListener('load', () => {
