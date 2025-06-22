@@ -202,40 +202,161 @@ function openaAnswer() {
     });
   });
 }
+//Общий поп-ап
+function openGeneralPopUp(){
 //Открытие видео поп-ап
-function openaVideoPopUp(){
- const popup = document.getElementById('videoPopup');
-  const popupIframe = popup.querySelector('iframe');
-  const closeBtn = popup.querySelector('.video-popup-close');
+function openModal(contentHtml) {
+  const modal = document.getElementById('global-modal');
+  const body = modal.querySelector('.modal-body');
 
-  // навесим на все кнопки внутри слайдов
-  document.querySelectorAll('.video-popup-open').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const videoUrl = btn.dataset.video;
-      popupIframe.src = videoUrl + '?autoplay=1';
-      popup.style.display = 'flex';
-    });
-  });
-
-  // закрытие
-  closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-    popupIframe.src = ''; // остановка видео
-  });
-
-  // закрытие по фону
-  popup.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-      popupIframe.src = '';
-    }
-  });
+  body.innerHTML = contentHtml;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
+
+function closeModal() {
+  const modal = document.getElementById('global-modal');
+  const body = modal.querySelector('.modal-body');
+
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+
+  // ❗ ВАЖНО: Удаляем контент, чтобы iframe выгрузился
+  body.innerHTML = '';
+}
+
+// Закрытие
+document.querySelectorAll('[data-close-modal]').forEach(el => {
+  el.addEventListener('click', closeModal);
+});
+
+// Универсальный обработчик
+document.querySelectorAll('[data-modal-type]').forEach(button => {
+  button.addEventListener('click', e => {
+    e.preventDefault();
+
+    const type = button.getAttribute('data-modal-type');
+    const content = button.getAttribute('data-modal-content');
+    let html = '';
+
+    function extractYouTubeId(url) {
+  const regExp = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n]+)/;
+  const match = url.match(regExp);
+  return match ? match[1] : null;
+}
+
+    switch (type) {
+  case 'video':
+    html = `<video controls autoplay src="${content}"></video>`;
+    break;
+
+  case 'image':
+    html = `<img src="${content}" alt="" style="max-width:100%">`;
+    break;
+
+  case 'text':
+    const source = document.querySelector(content);
+    if (source) html = source.innerHTML;
+    break;
+
+  case 'youtube':
+    // Получим ID видео из обычной ссылки
+    const youtubeId = extractYouTubeId(content);
+    if (youtubeId) {
+      html = `
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+          <iframe
+            src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; encrypted-media"
+          ></iframe>
+        </div>`;
+    }
+    break;
+
+  default:
+    html = '<p>Неизвестный тип контента.</p>';
+}
+
+    openModal(html);
+  });
+});
+}
+//Открытие 
+function openPromoDetails(){
+// Один общий тултип
+const tooltipBox = document.createElement('div');
+tooltipBox.className = 'tooltip-box';
+document.body.appendChild(tooltipBox);
+
+let activeTrigger = null;
+
+document.addEventListener('click', e => {
+  const trigger = e.target.closest('.tooltip-trigger');
+
+  if (trigger) {
+    e.preventDefault();
+
+    const tooltipId = trigger.getAttribute('data-tooltip-id');
+    const tooltipContentBlock = document.getElementById(tooltipId);
+
+    if (!tooltipContentBlock) return;
+
+    // Повторный клик — закрытие
+    if (trigger === activeTrigger) {
+      tooltipBox.classList.remove('visible');
+      activeTrigger = null;
+      return;
+    }
+
+    // Установить HTML
+    tooltipBox.innerHTML = tooltipContentBlock.innerHTML;
+
+    // Позиционировать
+    const rect = trigger.getBoundingClientRect();
+    const scrollY = window.scrollY;
+    const scrollX = window.scrollX;
+
+    // Сначала показываем, чтобы получить размеры
+    tooltipBox.style.visibility = 'hidden';
+    tooltipBox.classList.add('visible');
+
+    requestAnimationFrame(() => {
+      const boxRect = tooltipBox.getBoundingClientRect();
+      let top = rect.top + scrollY - boxRect.height - 10;
+      let left = rect.left + scrollX;
+
+      // Если не помещается сверху — показываем снизу
+      if (top < scrollY) {
+        top = rect.bottom + scrollY + 10;
+      }
+
+      tooltipBox.style.top = `${top}px`;
+      tooltipBox.style.left = `${left}px`;
+      tooltipBox.style.visibility = 'visible';
+
+      activeTrigger = trigger;
+    });
+
+  } else {
+    // Клик вне — скрыть
+    tooltipBox.classList.remove('visible');
+    activeTrigger = null;
+  }
+});
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
 initMobileMenu();
 accordionFooter();
 openaAnswer();
-openaVideoPopUp();
+openGeneralPopUp();
+openPromoDetails();
 
 }, false);
 window.addEventListener('load', () => {

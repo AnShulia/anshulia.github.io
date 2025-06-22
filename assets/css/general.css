@@ -79,7 +79,6 @@ body {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
   border: 1px solid white;
-
 gap: 6px;
 color: white;
 font-weight: bold;
@@ -123,6 +122,66 @@ text-shadow: none;
   font-size: 20px;
   }
 }
+/*ПопАп*/
+/* Общий контейнер */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Затемнение фона */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Контейнер модального окна */
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  width: 800px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Закрывающая кнопка */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Контентная часть */
+.modal-body {
+  padding: 40px 20px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Пример для видео */
+.modal-body iframe,
+.modal-body video {
+  width: 100%;
+  height: auto;
+  border: none;
+  display: block;
+}
+
 /**/
 .after-quest .slider-wrapper,
 .after-quest .swiper-wrapper{
@@ -144,6 +203,12 @@ text-shadow: none;
   object-fit: cover;
   display: block;
   border-radius: 20px;
+}
+.page-dop-obor.after-quest .after-slide-image-wrapper550{
+    width: 412px;
+    height: 412px;
+    display: flex;
+    justify-content: center;
 }
 @media (max-width: 768px){
 
@@ -172,8 +237,28 @@ text-shadow: none;
 
 
 
-/**/
-
+/*Подробнее в акциях*/
+.tooltip-box {
+  position: absolute;
+  background: #222;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 300px;
+  line-height: 1.4;
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.tooltip-box.visible {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
 /*140 price, 160 mesta, 200 kvadro/kvest, */
 /*h1*/
 .banner-top h1{

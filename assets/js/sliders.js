@@ -370,7 +370,7 @@ function sliderZabronirovat() {
     const updatePrice = () => {
       const routePrice = parseInt(select.value) || 0;
       const people = parseInt(count.value) || 0;
-      priceDisplay.textContent = `${routePrice * people} ₽`;
+      priceDisplay.textContent = `${routePrice * people} BYN`;
     };
 
     select.addEventListener('change', updatePrice);
@@ -381,7 +381,34 @@ function sliderZabronirovat() {
 }
 //Секция места отдыха
 function sliderMesta(){
+  new Swiper('.after-slider-vip', {
+  slidesPerView: 'auto',
+    spaceBetween: 20,
+    watchOverflow: true,
+    breakpoints: {
+      320: {
+        slidesOffsetBefore: 16,
+      },
+      768: {
+        slidesOffsetBefore: 104,
+      },
+      1024: {
+        slidesOffsetBefore: 150,
+      },
+      1440: {
+        slidesOffsetBefore: 405,
+      },
+      1920: {
+        slidesOffsetBefore: 405,
+      },
+    },
+    navigation: {
+    nextEl: '.after-slider-vip .swiper-button-next',
+    prevEl: '.after-slider-vip .swiper-button-prev',
+  },
+  });
 
+/*
   new Swiper('.after-slider-vip', {
   watchOverflow: true,
   slidesPerView: 'auto',
@@ -414,6 +441,8 @@ function sliderMesta(){
     prevEl: '.after-slider-vip .swiper-button-prev',
   },
 });
+*/
+
 /*
   new Swiper('.after-slider', {
   slidesPerView: 'auto',
@@ -559,39 +588,62 @@ function sliderMesta(){
     }
   });
 });
+//Кнопка "далее"
+document.querySelectorAll('.price-block').forEach(block => {
+  const button = block.querySelector('.show-more-price');
+  const hiddenLists = block.querySelectorAll('.after-list.collapsible');
+
+  if (hiddenLists.length > 0 && button) {
+    let expanded = false;
+
+    button.addEventListener('click', () => {
+      expanded = !expanded;
+
+      hiddenLists.forEach(list => {
+        if (expanded) {
+          list.classList.add('expanded');
+        } else {
+          list.classList.remove('expanded');
+        }
+      });
+
+      button.textContent = expanded ? 'Скрыть ⤒' : 'Далее ⤋';
+    });
+  }
+});
+
 }
 //Секция попробывать после
 
 function sliderAfterTry(){
 const pageAfterTryWrapperSwiper = new Swiper('.after-try-swiper', {
+  slidesPerView: 'auto',
+    spaceBetween: 20,
+    watchOverflow: true,
     breakpoints: {
-    320: {
-      slidesOffsetBefore: 0,
-      slidesPerView: 1,
+      320: {
+        slidesOffsetBefore: 16,
+      },
+      768: {
+        slidesOffsetBefore: 104,
+      },
+      1024: {
+        slidesOffsetBefore: 150,
+      },
+      1440: {
+        slidesOffsetBefore: 180,
+      },
+      1920: {
+        slidesOffsetBefore: 220,
+      },
     },
-    480: {
-      slidesOffsetBefore: 104,
-      slidesPerView: 1.4,
-    },
-    768: {
-      slidesOffsetBefore: 50,
-      slidesPerView: 1.4,
-    },
-    1220: {
-      slidesPerView: 3,
-    },
-    1640: {
-      slidesOffsetBefore: 220,
-      slidesPerView: 3,
-    },
-  },
     navigation: {
       nextEl: '.after-try-swiper .swiper-button-next',
       prevEl: '.after-try-swiper .swiper-button-prev',
     },
-
   });
 }
+
 function sliderDopGame(){
   const bookSwiper = new Swiper('.book-slider', {
   slidesPerView: 4,

@@ -902,11 +902,11 @@ FAQ
   line-height: 1.4;
   padding: 0 10px;
   color: #333;
-  max-width: 250px;
 }
 .faq-slide.open .faq-slide-answer {
   max-height: 500px; 
   margin-top: 12px;
+  margin-bottom: 35px;
 }
 .faq-slide-button svg {
   transition: transform 0.5s ease;
