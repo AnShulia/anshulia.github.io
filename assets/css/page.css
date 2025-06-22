@@ -2006,7 +2006,8 @@ width: 100%;
 
 }
 .page-interest-sliders .after-slider-buttons-wraper,
-.page-dop .after-slider-buttons-wraper{   
+.page-dop .after-slider-buttons-wraper,
+.page-price.page-programs .after-slider-buttons-wraper{   
   padding: 0 120px;
   color: #86868B;
 
@@ -2270,8 +2271,12 @@ color: #86868B;
 */
 /**/
 .page-price{
-  margin: 0 auto;
-  max-width: 1721px;
+  /*margin: 0 auto;
+  max-width: 1721px;*/
+  padding: 0 clamp(34px, calc(7.118vw + -20.67px), 116px);;
+}
+.swiperPagePricePrograms .swiper-wrapper {
+  max-width: 1820px; /* например: 4 * 405 + 3 * 50 (пробелы между) */
 }
 .page-price h2{
   color: #FD9700;
@@ -2355,12 +2360,13 @@ vertical-align: middle;
     color: #FD9700;
     margin: 40px 0;
 }
-.page-programs.page-price,
+/*.page-programs.page-price,*/
 .dop-price-section.page-price{
   margin: 0 auto;
  max-width: 1721px;
 }
-.page-programs-grid,
+/*.page-programs-grid,*/
+/*
 .dop-price-section-wrapper{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2370,7 +2376,14 @@ vertical-align: middle;
   max-width: 1721px;
   gap: 15px;
   padding-top: 45px;
+}*/
+/*
+.page-price.page-programs .page-programs-grid.swiper-wrapper{
+  padding-left: clamp(34px, calc(7.118vw + -20.67px), 116px);
+  padding-right: clamp(34px, calc(7.118vw + -20.67px), 116px);
 }
+*/
+
 .page-programs-grid-item{
   max-width: 385px;
   width: 100%;
@@ -2388,6 +2401,7 @@ vertical-align: middle;
       text-align: center;
       vertical-align: middle;
       padding-bottom: clamp(24px, calc(-0.608vw + 28.67px), 17px);
+      min-height: 120px;
 }
 /**/
 .color-slider {
@@ -2680,6 +2694,19 @@ padding: 5px 0;
 .page-price-section-accordion-price-price{
   text-decoration: underline;
 }
+/**/
+
+@media (max-width: 1300px){
+.page-price-section-tactical,
+.page-price-section-kvest{
+  flex-direction: column;
+  justify-content: center;
+
+}
+.page-price-section-accordion{
+  width: 100%;
+}
+}
 @media (max-width: 768px){
   /*общаг*/
   .dop-price-section.page-price h2,
@@ -2715,5 +2742,6 @@ padding: 5px 0;
 .page-programs-grid-item{
   max-width: 550px;
 }
+
 }
 

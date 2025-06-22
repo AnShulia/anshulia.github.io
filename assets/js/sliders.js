@@ -676,27 +676,6 @@ function sliderDopGame(){
 
 function sliderInteres(){
 const swiper = new Swiper('.page-interest-slider', {
-  /*
-  slidesPerView: 4.5,
-  spaceBetween: 20,
-  breakpoints: {
-    320: {
-      slidesOffsetBefore: 0,
-      slidesPerView: 1,
-    },
-    480: {
-      slidesPerView: 2,
-    },
-    768: {
-      slidesPerView: 2.5,
-    },
-    1220: {
-      slidesPerView: 3.5,
-    },
-    1440: {
-      slidesPerView: 4.5,
-    },
-  },*/
   slidesPerView: 'auto',
   spaceBetween: 15,
   navigation: {
@@ -925,6 +904,17 @@ const extraNext = document.querySelector('.extra-next');
 //Страница цены
 //Слайдер
 function sliderPagePrice() {
+  //слайдер 
+const swiperPagePricePrograms = new Swiper('.swiperPagePricePrograms', {
+    slidesPerView: 'auto',
+    spaceBetween: 50,
+    grabCursor: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.page-programs  .swiper-button-next',
+      prevEl: '.page-programs  .swiper-button-prev',
+    }
+  });
   // === Color slider ===
 document.querySelectorAll('.color-slider').forEach((slider, index) => {
   if (slider.classList.contains('swiper-initialized')) return; // <-- защита от двойной инициализации
@@ -943,7 +933,6 @@ document.querySelectorAll('.color-slider').forEach((slider, index) => {
     }
   });
 });
-
 // === Quest toggle logic ===
 document.querySelectorAll(".quest-box").forEach((questBox) => {
   const questListWrapper = questBox.querySelector(".quest-list-wrapper");
@@ -959,7 +948,6 @@ document.querySelectorAll(".quest-box").forEach((questBox) => {
       toggleBtn.style.visibility = "hidden";
     }
   };
-
   checkOverflow();
   window.addEventListener("resize", checkOverflow);
 
@@ -970,7 +958,6 @@ document.querySelectorAll(".quest-box").forEach((questBox) => {
       : "смотреть все квесты ⤋";
   });
 });
-
 // === Tooltip behavior ===
 document.querySelectorAll('.tooltip').forEach((tooltip) => {
   tooltip.addEventListener('click', (e) => {
@@ -987,19 +974,16 @@ document.querySelectorAll('.tooltip').forEach((tooltip) => {
     e.stopPropagation();
   });
 });
-
 // Скрыть все тултипы при клике вне
 document.addEventListener('click', () => {
   document.querySelectorAll('.tooltip-text.visible').forEach(t => t.classList.remove('visible'));
 });
-
 // === Скрыть пустые элементы .quest-box-info ===
 document.querySelectorAll(".quest-box-info").forEach((el) => {
   if (!el.textContent.trim()) {
     el.style.visibility = "hidden";
   }
 });
-
 //Слайдер комплекс
 document.querySelectorAll('.sliderComplexPrice').forEach((sliderEl) => {
   new Swiper(sliderEl, {
@@ -1028,6 +1012,18 @@ document.querySelectorAll('.sliderComplexPrice').forEach((sliderEl) => {
     }
   });
 });
+
+const swiperPriceDop = new Swiper('.swiperPriceDop', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    grabCursor: true,
+    // можно добавить стрелки:
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+
 
 
 }
