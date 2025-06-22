@@ -211,7 +211,9 @@ text-shadow: none;
     justify-content: center;
 }
 @media (max-width: 768px){
-
+  .after-slide-image-wrapper550{
+    height: 462px;
+  }
 }
 /*Кнопки слайдера*/
 .after-slider-buttons-wraper{

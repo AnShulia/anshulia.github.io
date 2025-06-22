@@ -984,39 +984,46 @@ document.querySelectorAll(".quest-box-info").forEach((el) => {
     el.style.visibility = "hidden";
   }
 });
+
 //Слайдер комплекс
 document.querySelectorAll('.sliderComplexPrice').forEach((sliderEl) => {
   new Swiper(sliderEl, {
-    slidesPerView: 3,
+    slidesPerView: 'auto',
     spaceBetween: 20,
     loop: false,
+    breakpoints: {
+      320: {
+        slidesOffsetBefore: 16,
+      },
+      480: {
+        slidesOffsetBefore: 104,
+      },
+      769: {
+        slidesOffsetBefore: 0,
+      },
+    },
     navigation: {
       nextEl: sliderEl.querySelector('.swiper-button-next'),
       prevEl: sliderEl.querySelector('.swiper-button-prev'),
     },
-    pagination: {
-      el: sliderEl.querySelector('.swiper-pagination'),
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 3.2,
-      },
-      480: {
-        slidesOffsetBefore: 104,
-        slidesPerView: 1.5,
-      },
-      0: {
-        slidesPerView: 1,
-      }
-    }
   });
 });
 
 const swiperPriceDop = new Swiper('.swiperPriceDop', {
-    slidesPerView: 'auto',
-    spaceBetween: 20,
+    spaceBetween: 10,
+    slidesPerView: 1, // базовое значение
     grabCursor: true,
+    breakpoints: {
+    480: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    }
+  },
     // можно добавить стрелки:
     navigation: {
       nextEl: '.swiper-button-next',

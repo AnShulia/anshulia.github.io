@@ -2275,6 +2275,7 @@ color: #86868B;
   max-width: 1721px;*/
   padding: 0 clamp(34px, calc(7.118vw + -20.67px), 116px);;
 }
+
 .swiperPagePricePrograms .swiper-wrapper {
   max-width: 1820px; /* например: 4 * 405 + 3 * 50 (пробелы между) */
 }
@@ -2362,28 +2363,12 @@ vertical-align: middle;
 }
 /*.page-programs.page-price,*/
 .dop-price-section.page-price{
-  margin: 0 auto;
+margin: 0 auto;
  max-width: 1721px;
 }
-/*.page-programs-grid,*/
-/*
-.dop-price-section-wrapper{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 0 auto;
-   align-content: space-between;
-  justify-content: space-around;
-  max-width: 1721px;
-  gap: 15px;
-  padding-top: 45px;
-}*/
-/*
-.page-price.page-programs .page-programs-grid.swiper-wrapper{
-  padding-left: clamp(34px, calc(7.118vw + -20.67px), 116px);
-  padding-right: clamp(34px, calc(7.118vw + -20.67px), 116px);
+.dop-price-section .page-programs-grid-item{
+  max-width: none;
 }
-*/
-
 .page-programs-grid-item{
   max-width: 385px;
   width: 100%;
@@ -2502,18 +2487,19 @@ color: #86868B;
 max-width:  669px;
 margin-top: 25px;
 }
+.slider-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 /*
 Секция доб оборудование страница прайс
 */
 .dop-price-section.page-price{
   padding-bottom: 56px;
 }
-.dop-price-section-wrapper{ 
-  padding-top: 70px;
-  grid-template-columns: repeat(3, 1fr) !important;
-}
 .page-programs-grid-item-img{
- width:  clamp(344px, calc(3.559vw + 316.67px), 385px);
+ max-width:  clamp(344px, calc(3.559vw + 316.67px), 385px);
 height: 230px;
 margin: 0 auto clamp(40px, calc(3.038vw + 16.67px), 75px);
 }
@@ -2601,6 +2587,7 @@ margin: 25px 0;
   .page-price-section-kvest{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     background: #FFFFFF;
     border-radius: 30px;
   }
@@ -2716,12 +2703,6 @@ padding: 5px 0;
     text-align: left !important;
     padding-left: 40px;
   }
- .dop-price-section-wrapper{
-  padding: 70px 60px 0;
-  grid-template-columns: repeat(1, 1fr) !important;
-  justify-content: center;
-  gap:40px;
-}
 .page-programs-grid-item h3{
   min-height: 119px;
 }
@@ -2735,12 +2716,14 @@ padding: 5px 0;
 .page-programs-grid .page-programs-grid-item{
   padding-top: 35px;
 }
-
-.page-programs-grid{
-  grid-template-columns: repeat(2, 1fr);
-}
 .page-programs-grid-item{
   max-width: 550px;
+}
+
+.page-price.page-complex{
+  /*margin: 0 auto;
+  max-width: 1721px;*/
+  padding: 0 ;
 }
 
 }
