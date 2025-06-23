@@ -1083,6 +1083,20 @@ footer .footer-grid {
   max-width: 992px;
   padding-bottom: 31px;
 }
+.footer-content h2{
+  color: #0000008F;
+  font-family: Corbel;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.12px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 0;
+}
+.footer-content p{
+font-size: 12px;
+}
 @media (max-width: 768px){
 footer .footer-wrapper{
   padding: 0 20px 24px;

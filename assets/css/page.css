@@ -1605,6 +1605,11 @@ Food
   width: clamp(398px, calc(5.990vw + 352.00px), 467px);
   height: clamp(398px, calc(5.990vw + 352.00px), 467px);
 }
+.page-food-wrapper-left-image:hover,
+.page-delivery-right img:hover{ 
+  transition: all 0.5s ease;
+  transform: scale(1.05);
+}
 .page-food-wrapper-left-image img{
   width: 100%;
 }

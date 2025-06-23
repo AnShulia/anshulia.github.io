@@ -907,7 +907,7 @@ function sliderPagePrice() {
   //слайдер 
 const swiperPagePricePrograms = new Swiper('.swiperPagePricePrograms', {
     slidesPerView: 'auto',
-    spaceBetween: 50,
+    spaceBetween: 40,
     grabCursor: true,
     watchOverflow: true,
     navigation: {
