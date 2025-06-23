@@ -11,7 +11,8 @@
   line-height: clamp(52.01px, calc(1.388vw + 41.35px), 68px);
   letter-spacing: clamp(-0.14px, calc(-0.038vw + 0.15px), -0.58px);
   text-align: center;
-  margin: 50px 0 50px;
+  margin: 50px auto;
+  max-width: 820px;
 }
 .menu-page-title:after {
   content: '';
@@ -34,4 +35,78 @@
   padding-bottom: 20px;
   margin-bottom: 48px;
   color: #1D1D1F;
+}
+.menu-page-image{
+   margin: 0 auto 80px;
+  max-width: 980px;
+}
+.menu-page-image img{
+  width: 100%;
+  height: 100%;
+}
+.page-contacts{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Две равные колонки */
+  gap: 82px; /* Отступ между колонками (по желанию) */
+}
+.page-contacts-section h2{
+  text-align: left;
+  font-family: Corbel;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+.page-contacts{
+  padding-top: 30px;
+}
+.page-contacts-item{
+  max-width: 406px;
+}
+.page-contacts-item p,
+.page-contacts-item ul{
+  padding-bottom: 20px;
+}
+.page-contacts-item li{
+  list-style: inside;;
+}
+.page-contacts-map{
+  max-width: 1571px;
+  max-height: 693px;
+}
+.page-contacts-base{
+  margin: 50px auto;
+  max-width: 982px;
+  padding: 40px 0;
+  background-color: #F5F5F7;
+  border: 1px #D2D2D7 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.page-contacts-base li{
+  font-family: Corbel;
+font-weight: 400;
+font-size: 17px;
+line-height: 25px;
+letter-spacing: -0.37px;
+text-align: center;
+vertical-align: middle;
+}
+.page-contacts-section h3{
+  font-family: Corbel;
+font-weight: 700;
+font-size: 28px;
+line-height: 32px;
+letter-spacing: 0.2px;
+vertical-align: middle;
+margin-bottom: 13px;
+}
+@media (max-width: 768px){
+  .menu-page-image{
+    margin: 0 auto 57px;
+    max-width: 719px;
+}
 }
