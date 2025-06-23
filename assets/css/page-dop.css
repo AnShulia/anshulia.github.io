@@ -38,7 +38,7 @@
 }
 .menu-page-image{
    margin: 0 auto 80px;
-  max-width: 980px;
+  max-width: 380px;
 }
 .menu-page-image img{
   width: 100%;
@@ -107,6 +107,5 @@ margin-bottom: 13px;
 @media (max-width: 768px){
   .menu-page-image{
     margin: 0 auto 57px;
-    max-width: 719px;
 }
 }
