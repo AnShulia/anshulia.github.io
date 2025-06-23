@@ -10,6 +10,9 @@ ul {
 a {
   text-decoration: none;
 }
+html {
+scroll-behavior: smooth;
+}
 body {
   font-family: "Manrope", "Corbel", "Segoe UI", sans-serif;
 }
@@ -27,6 +30,8 @@ body {
   justify-content: center;
   align-items: center;
   white-space: nowrap;
+  border: none;
+  background: none;
 }
 .buttons-general:hover {
   transition: all 0.5s ease;
@@ -110,6 +115,11 @@ text-shadow: none;
   height: 65px;
   font-size: 32px;
 }
+.buttons-size113{
+  width: 113px;
+  height: 24px;
+  font-size: 12px;
+}
 @media (max-width: 768px){
   .buttons-size179-1{
     width: 114px;
@@ -120,6 +130,65 @@ text-shadow: none;
   width: 98px;
   height: 25px;
   font-size: 20px;
+  }
+}
+/*Хлебные крошки*/
+.header-dop,
+.header-dop-breadcrumbs,
+.header-dop-anchor,
+.header-dop-buttons,
+.header-dop-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+.header-dop-wrapper{
+  gap: 50px
+}
+.header-dop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 50px;
+}
+
+.header-dop-anchor a,
+.header-dop-name{
+color: #000000;
+}
+.header-dop-name{
+font-family: Corbel;
+font-weight: 700;
+font-size: 19.36px;
+line-height: 24px;
+letter-spacing: 0.23px;
+vertical-align: middle;
+}
+.header-dop-breadcrumbs{
+  color: #0000008F;
+}
+.header-dop-breadcrumbs,
+.header-dop-anchor{
+  font-family: Corbel;
+font-weight: 400;
+font-size: 12px;
+line-height: 22px;
+letter-spacing: -0.12px;
+vertical-align: middle;
+}
+.header-dop-anchor{
+gap: 27px;
+}
+.header-dop-buttons{
+  gap: 25px;
+}
+.buttons-header{
+  color: #9494aa8f;
+}
+@media (max-width: 768px){
+  .header-dop-wrapper{
+    flex-direction: column;
+    gap: 0px
   }
 }
 /*ПопАп*/
