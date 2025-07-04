@@ -104,8 +104,3 @@ letter-spacing: 0.2px;
 vertical-align: middle;
 margin-bottom: 13px;
 }
-@media (max-width: 768px){
-  .menu-page-image{
-    margin: 0 auto 57px;
-}
-}

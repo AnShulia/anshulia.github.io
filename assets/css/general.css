@@ -120,18 +120,6 @@ text-shadow: none;
   height: 24px;
   font-size: 12px;
 }
-@media (max-width: 768px){
-  .buttons-size179-1{
-    width: 114px;
-    height: 38px;
-    font-size: 20px;
-  }
-  .buttons-size179-2{
-  width: 98px;
-  height: 25px;
-  font-size: 20px;
-  }
-}
 /*Хлебные крошки*/
 .header-dop,
 .header-dop-breadcrumbs,
@@ -142,14 +130,14 @@ text-shadow: none;
   flex-direction: row;
 }
 .header-dop-wrapper{
-  gap: 50px
+  gap: clamp(10px, calc(26.846vw + -196.17px), 50px);
 }
 .header-dop{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  gap: 50px;
+  gap: clamp(10px, calc(26.846vw + -196.17px), 50px);;
 }
 
 .header-dop-anchor a,
@@ -184,12 +172,6 @@ gap: 27px;
 }
 .buttons-header{
   color: #9494aa8f;
-}
-@media (max-width: 768px){
-  .header-dop-wrapper{
-    flex-direction: column;
-    gap: 0px
-  }
 }
 /*ПопАп*/
 /* Общий контейнер */
@@ -278,11 +260,6 @@ gap: 27px;
     height: 412px;
     display: flex;
     justify-content: center;
-}
-@media (max-width: 768px){
-  .after-slide-image-wrapper550{
-    height: 462px;
-  }
 }
 /*Кнопки слайдера*/
 .after-slider-buttons-wraper{
@@ -381,26 +358,4 @@ gap: 27px;
 .page-banner-price-description{
   bottom: 27px;
 }
-@media (max-width: 768px){
-  .liner{
- background: linear-gradient(180deg, #0C1247 0%, #28337D 28%, #505DAD 46%, #7D8ED1 60%, #AEBCE6 75%, #EFECFF 90%, #FFFFFF 100%);
-}
- .banner-top {
-        height: 660px !important;
-       
-    } 
-    .banner-top-description{
-    bottom: 180px;
-    }
-.banner-top-buttons-wrapper{
-    bottom: 100px;
-}
-  .banner-top .page-banner-price{
-bottom: 50px;
-}
-    .banner-top .page-banner-price-description{
-    bottom: 0px;
-    color: #FD9700;
-    width: 90%;
-}
-}
+

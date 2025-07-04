@@ -96,102 +96,12 @@ function sliderVideoSection() {
 }     
 //Секция базы
 function sliderBaseSection(){
-  /*
-const baseSwiper = new Swiper('.base-swiper', {
-  spaceBetween: 20,
-  breakpoints: {
-    0:{
-      slidesOffsetBefore: 90,
-      slidesPerView: 1.1,
-    },
-    768: {
-      slidesOffsetBefore: 160, // начиная с 768px
-      slidesPerView: 'auto',
-    },
-     769: {
-    slidesOffsetBefore: 20,
-    slidesPerView: 1,
-    },
-    1000:{
-      slidesOffsetBefore: 160,
-      slidesPerView: 1.5,
-    },
-    1200:{
-      slidesOffsetBefore: 200,
-      slidesPerView: 1.5,
-    },
-    1440: {
-      slidesOffsetBefore: 400,
-      slidesPerView: 1.8,
-    }
-  },
-  on: {
-    slideChange: function () {
-      const index = this.activeIndex;
-      document.querySelectorAll('.toggle-button').forEach((btn, i) => {
-        btn.classList.toggle('active', i === index);
-      });
-    }
-  }
-});
-
-const baseToggleSwiper = new Swiper('.base-toggle-swiper', {
-  slidesPerView: 'auto',
-  spaceBetween: 10,
-  freeMode: true,
-});
-const buttons = document.querySelectorAll('.toggle-button');
-
-buttons.forEach((button, index) => {
-  button.addEventListener('click', () => {
-    const index = parseInt(button.dataset.slide, 10);
-    baseSwiper.slideTo(index); // mainSlider — твой основной Swiper
-    // Активный класс
-    buttons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    centerSlideSmart(index);
-  });
-});
-function centerSlideSmart(index) {
-  const slide = baseToggleSwiper.slides[index];
-  const slideWidth = slide.offsetWidth;
-  const container = baseToggleSwiper.el;
-  const containerWidth = container.offsetWidth;
-  const contentWidth = baseToggleSwiper.wrapperEl.scrollWidth;
-
-  const offsetLeft = slide.offsetLeft;
-  const scrollTo = offsetLeft - (containerWidth / 2) + (slideWidth / 2);
-
-  // Условие: не скроллить за начало и конец контента
-  const maxScroll = contentWidth - containerWidth;
-  const finalScroll = Math.max(0, Math.min(scrollTo, maxScroll));
-
-  container.scrollTo({
-    left: finalScroll,
-    behavior: 'smooth'
-  });
-}
-
-function toggleBaseWidth(){
-  const swiperWrapper = document.querySelector('.base-toggle-swiper .swiper-wrapper');
-  const buttons = swiperWrapper.querySelectorAll('.toggle-button');
-  const toggleWrapper = document.querySelector('.toggle-wrapper');
-
-   if (buttons.length > 2) {
-    toggleWrapper.style.width = '';
-  } else {
-    toggleWrapper.style.width = 'max-content'; // или '100%' или 'auto' — по умолчанию
-  }
-}
-toggleBaseWidth();
-*/
 const baseSwiper = new Swiper('.base-swiper', {
     spaceBetween: 20,
     breakpoints: {
       0: {
-        slidesOffsetBefore: 90,
-        slidesPerView: 1.1,
+        slidesOffsetBefore: 20,
+        slidesPerView: 'auto',
       },
       768: {
         slidesOffsetBefore: 160,
@@ -226,7 +136,6 @@ const baseSwiper = new Swiper('.base-swiper', {
 
   const baseToggleSwiper = new Swiper('.base-toggle-swiper', {
     slidesPerView: 'auto',
-    spaceBetween: 10,
     freeMode: true,
   });
 
@@ -387,7 +296,11 @@ function sliderMesta(){
     watchOverflow: true,
     breakpoints: {
       320: {
+        slidesPerView: 1,
         slidesOffsetBefore: 16,
+      },
+      480: {
+        slidesOffsetBefore: 50,
       },
       768: {
         slidesOffsetBefore: 104,
@@ -396,7 +309,7 @@ function sliderMesta(){
         slidesOffsetBefore: 150,
       },
       1440: {
-        slidesOffsetBefore: 405,
+        slidesOffsetBefore: 150,
       },
       1920: {
         slidesOffsetBefore: 405,
@@ -407,159 +320,6 @@ function sliderMesta(){
     prevEl: '.after-slider-vip .swiper-button-prev',
   },
   });
-
-/*
-  new Swiper('.after-slider-vip', {
-  watchOverflow: true,
-  slidesPerView: 'auto',
-  spaceBetween: 20,
-  
-  breakpoints: {
-    320: {
-      slidesOffsetBefore: 0,
-      slidesPerView: 1,
-    },
-    480: {
-      slidesOffsetBefore: 104,
-      slidesPerView: 1.4,
-    },
-    768: {
-      slidesOffsetBefore: 50,
-      slidesPerView: 1.4,
-    },
-    1000: {
-      slidesOffsetBefore: 120,
-      slidesPerView: 2,
-    },
-    1220: {
-      slidesOffsetBefore: 220,
-      slidesPerView: 3.2,
-    },
-  },
-  navigation: {
-    nextEl: '.after-slider-vip .swiper-button-next',
-    prevEl: '.after-slider-vip .swiper-button-prev',
-  },
-});
-*/
-
-/*
-  new Swiper('.after-slider', {
-  slidesPerView: 'auto',
-  spaceBetween: 20,
-  watchOverflow: true,
-  navigation: {
-    nextEl: '.after-slider .swiper-button-next',
-    prevEl: '.after-slider .swiper-button-prev',
-  },
-  breakpoints: {
-    320: {
-      slidesOffsetBefore: 16,
-    },
-    768: {
-      slidesOffsetBefore: 104,
-    },
-    1024: {
-      slidesOffsetBefore: 150,
-    },
-    1440: {
-      slidesOffsetBefore: 220,
-    },
-    1920: {
-      slidesOffsetBefore: 220,
-    },
-  }
-});
-
- new Swiper('.after-slider-shater', {
-    slidesPerView: 'auto',
-  spaceBetween: 20,
-  watchOverflow: true,
-  breakpoints: {
-    320: {
-      slidesOffsetBefore: 16,
-    },
-    768: {
-      slidesOffsetBefore: 104,
-    },
-    1024: {
-      slidesOffsetBefore: 150,
-    },
-    1440: {
-      slidesOffsetBefore: 220,
-    },
-    1920: {
-      slidesOffsetBefore: 220,
-    },
-  },
-    navigation: {
-      nextEl: '.after-slider-shater .swiper-button-next',
-      prevEl: '.after-slider-shater .swiper-button-prev',
-    },
-    
-  });
-  */
-/*
-  new Swiper('.after-slider-shater', {
-    spaceBetween: 20,
-    breakpoints: {
-    320: {
-      slidesOffsetBefore: 0,
-      slidesPerView: 1,
-    },
-    480: {
-      slidesOffsetBefore: 104,
-      slidesPerView: 1.4,
-    },
-    768: {
-      slidesOffsetBefore: 50,
-      slidesPerView: 1.4,
-    },
-    1000: {
-      slidesOffsetBefore: 120,
-      slidesPerView: 2,
-    },
-    1220: {
-      slidesOffsetBefore: 120,
-      slidesPerView: 3.2,
-    },
-  },
-    navigation: {
-      nextEl: '.after-slider-shater .swiper-button-next',
-      prevEl: '.after-slider-shater .swiper-button-prev',
-    },
-    
-  });
-  */
-  /*
-  new Swiper('.after-slider-besedki', {
-  slidesPerView: 'auto',
-  spaceBetween: 20,
-  watchOverflow: true,
-  breakpoints: {
-    320: {
-      slidesOffsetBefore: 16,
-    },
-    768: {
-      slidesOffsetBefore: 104,
-    },
-    1024: {
-      slidesOffsetBefore: 150,
-    },
-    1440: {
-      slidesOffsetBefore: 220,
-    },
-    1920: {
-      slidesOffsetBefore: 220,
-    },
-  },
-    navigation: {
-      nextEl: '.after-slider-besedki .swiper-button-next',
-      prevEl: '.after-slider-besedki .swiper-button-prev',
-    },
-    
-  });
-  */
  document.querySelectorAll('.after-slider').forEach((slider) => {
   new Swiper(slider, {
     slidesPerView: 'auto',
@@ -571,7 +331,11 @@ function sliderMesta(){
     },
     breakpoints: {
       320: {
-        slidesOffsetBefore: 16,
+        slidesPerView: 1,
+        slidesOffsetBefore: 20,
+      },
+      480: {
+        slidesOffsetBefore: 50,
       },
       768: {
         slidesOffsetBefore: 104,
@@ -614,7 +378,6 @@ document.querySelectorAll('.price-block').forEach(block => {
 
 }
 //Секция попробывать после
-
 function sliderAfterTry(){
 const pageAfterTryWrapperSwiper = new Swiper('.after-try-swiper', {
   slidesPerView: 'auto',
@@ -623,6 +386,7 @@ const pageAfterTryWrapperSwiper = new Swiper('.after-try-swiper', {
     breakpoints: {
       320: {
         slidesOffsetBefore: 16,
+
       },
       768: {
         slidesOffsetBefore: 104,
@@ -653,7 +417,7 @@ function sliderDopGame(){
       slidesPerView: 1,
     },
     480: {
-      slidesOffsetBefore: 104,
+      slidesOffsetBefore: 20,
       slidesPerView: 1.4,
     },
     768: {
@@ -785,11 +549,11 @@ function sliderFaq(){
     breakpoints: {
     320: {
       slidesOffsetBefore: 20,
-      slidesPerView: 1,
+      slidesPerView: 1.2,
     },
-    480: {
+    576: {
       slidesOffsetBefore: 20,
-      slidesPerView: 4.3,
+      slidesPerView: 2,
     },
     768: {
       slidesOffsetBefore: 20,
@@ -812,7 +576,7 @@ function sliderMainNews(){
     spaceBetween: 20,
     breakpoints: {
         320: { 
-          slidesOffsetBefore: 0,
+          slidesOffsetBefore: 20,
           slidesPerView: 'auto',
         },
         768: { 
@@ -839,8 +603,11 @@ const kvestThumbSwiper = new Swiper('.kvest-thumb-swiper', {
   freeMode: true,
   watchSlidesProgress: true,
   breakpoints: {
-    320: {slidesPerView: 2.5},
-    1024: { slidesPerView: 4.5 }
+
+    320: {slidesPerView: 1.4},
+    768: { slidesPerView: 2.5 },
+    1024: { slidesPerView: 3.5 },
+    1220: { slidesPerView: 4.5 },
   }
 });
 
@@ -984,7 +751,7 @@ document.querySelectorAll(".quest-box-info").forEach((el) => {
     el.style.visibility = "hidden";
   }
 });
-
+/*
 //Слайдер комплекс
 document.querySelectorAll('.sliderComplexPrice').forEach((sliderEl) => {
   new Swiper(sliderEl, {
@@ -1008,7 +775,7 @@ document.querySelectorAll('.sliderComplexPrice').forEach((sliderEl) => {
     },
   });
 });
-
+*/
 const swiperPriceDop = new Swiper('.swiperPriceDop', {
     spaceBetween: 10,
     slidesPerView: 1, // базовое значение
