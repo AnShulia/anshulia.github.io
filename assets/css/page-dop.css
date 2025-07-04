@@ -38,7 +38,8 @@
 }
 .menu-page-image{
    margin: 0 auto 80px;
-  max-width: 380px;
+  max-width: 1120px;
+  height: 838px;
 }
 .menu-page-image img{
   width: 100%;
