@@ -576,6 +576,10 @@ padding: 0 10px;
   .bac-grey .horizontal-slider .book-slider-horizontal{
    width:  clamp(280px, calc(93.750vw + -20.00px), 520px) !important;
   }
+  .menu-page-image{
+    max-width: 448px;
+    height: auto;
+  }
 }
 
 
