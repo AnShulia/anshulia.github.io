@@ -188,10 +188,13 @@
   .banner-top .page-banner-price-description {
     line-height: normal;
   }
+  .kvest-thumb-swiper-preview-text{
+    font-size: clamp(11px, calc(1.172vw + 7.25px), 14px);
+  }
   /**/
   .kvest-banner-buttons .button-not-background,
   .kvest-banner-buttons .buttons-size170,
-  .kvest-thumb-swiper-preview-text,
+  
   .main-korporativ-text-block-button-wrapper .button-border-style,
   .menu-page-description,
   .page-food-wrapper-left-link, .page-food-wrapper-left-link a,
@@ -233,7 +236,7 @@
     padding: 5px 10px;
   }
   .kvest-thumb-swiper-preview-text {
-    bottom: -10%;
+    bottom: -20%;
   }
   /**/
   .kvest-main-swiper {
