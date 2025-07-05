@@ -349,7 +349,7 @@ document.addEventListener('click', e => {
 }
 //Попытка поддержки свг в фаерфокс
 function svgfetch(){
-  fetch('/assets/icons.svg')
+  fetch('/assets/svg/icons.svg')
     .then(res => res.text())
     .then(data => {
       const div = document.createElement('div');
