@@ -385,6 +385,7 @@
   footer .footer-content,
   footer .footer-menu-wrapper {
     max-width: 736px;
+    padding: 0 0 24px;
   }
   footer .footer-content p {
     font-family: Corbel;
