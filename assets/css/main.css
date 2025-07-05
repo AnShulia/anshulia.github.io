@@ -572,7 +572,7 @@ FAQ
 }
 .main-faq-slider-title h2 {
   margin-top: 0;
-  font-size: clamp(35px, calc(1.434vw + 23.99px), 51.52px);
+  font-size: clamp(30px, calc(1.434vw + 23.99px), 51.52px);
   white-space: nowrap;
 }
 .main-faq-slider-title,

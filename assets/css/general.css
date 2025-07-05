@@ -337,6 +337,11 @@ gap: 27px;
     transform: translate(-50%);
     width: 100%;
 }
+.banner-top.liner.page-banner-one .banner-top-description {
+    font-size: clamp(27px, calc(8.696vw + -39.78px), 37px);
+    line-height: clamp(27px, calc(13.527vw + -76.88px), 37px);
+    max-width: 90%;
+}
 .banner-top-description{
     bottom: 262px; 
     font-size: clamp(27px, calc(8.696vw + -39.78px), 45px);

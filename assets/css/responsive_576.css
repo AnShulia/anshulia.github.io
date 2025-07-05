@@ -20,6 +20,11 @@
     font-size: clamp(20px, calc(3.795vw + 7.86px), 37px);
     line-height: 120%;
   }
+  .banner-top.liner.page-banner-one .banner-top-description{
+    font-size: clamp(20px, calc(3.795vw + 7.86px), 37px);
+    line-height: 120%;
+    bottom: 30%;
+  }
   /**/
   .after-slider-buttons-wraper,
   .after-slider-vip-buttons, .faq-slider-controls, .book-slider-buttons{
@@ -346,7 +351,8 @@
     bottom: 60px;
   }
   .banner-top.liner.page-banner-one .page-banner-price{
-    bottom: 50px;
+    line-height: normal;
+    bottom: 40px;
   }
   .page-slider-video-section-title{
     align-items: baseline;

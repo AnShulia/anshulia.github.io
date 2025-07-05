@@ -1,25 +1,10 @@
-@media (min-width: 769px) and (max-width: 1024px){
-  .page-price .booking-sliders{
-    padding: 0;
-  }
-  .page-price .booking-sliders .book-slider-horizontal{
-    max-width: clamp(400px, calc(50.980vw + 7.96px), 530px);
-  }
-  .after-slider-buttons-wraper{
-  padding: 0 40px !important;
-  margin-right: 0;
-}
-
-}
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   body {
     overflow-x: hidden;
   }
-  /**/
   .col-w {
     color: #6e6e73;
   }
-  /**/
   body.no-scroll {
     overflow: hidden;
   }
@@ -162,9 +147,9 @@
     height: 25px;
     font-size: 35px;
   }
-  /**/
+    /**/
   .main-banner {
-    height: 660px !important;
+    height: 680px !important;
     background: linear-gradient(
       180deg,
       #0c1247 0%,
@@ -190,6 +175,125 @@
   .main-banner-text-wrapper .page-banner-button-wrapper-two {
     font-size: 17px !important;
   }
+  /**/
+  .page-banner {
+    height: calc(816px + 181px);
+  }
+  .page-banner-background {
+    padding: 21px 0;
+    height: 816px;
+  }
+  .page-banner-description {
+    margin-top: 329px;
+  }
+  .page-banner-buttons-wrapper {
+    margin-top: 45px;
+  }
+  .page-banner-button-wrapper-one,
+  .page-banner-button-wrapper-two {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: -0.12px;
+    padding: 7px 9px;
+  }
+  .page-banner-button-wrapper-one {
+    box-shadow: none;
+    background-color: #0071e3;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  .page-banner-button-wrapper-one:hover {
+    border: 1px #2997ff solid;
+    background: none;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
+    color: #0071e3;
+  }
+  .page-banner-button-wrapper-two {
+    background: none;
+    border: 1px #2997ff solid;
+    color: #2997ff;
+  }
+  .page-banner-button-wrapper-two:hover {
+    background: #2997ff;
+    border: 1px #2997ff solid;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
+  }
+  .page-banner-price,
+  .page-banner-price-description {
+    font-family: Corbel;
+  }
+  .page-banner-price {
+    color: #1d1d1f;
+    margin-top: 8px;
+    font-size: 17px;
+  }
+  .page-banner-price-description {
+    color: #6e6e73;
+    line-height: 25px;
+    margin-top: 8px;
+  }
+/**/
+/**/
+  .liner {
+    background: linear-gradient(
+      180deg,
+      #0c1247 0%,
+      #28337d 28%,
+      #505dad 46%,
+      #7d8ed1 60%,
+      #aebce6 75%,
+      #efecff 90%,
+      #ffffff 100%
+    );
+  }
+  .banner-top {
+    height: 680px !important;
+  }
+  .banner-top-description {
+    bottom: 180px;
+  }
+  .banner-top-buttons-wrapper {
+    bottom: 100px;
+  }
+  .banner-top .page-banner-price {
+    bottom: 60px;
+    line-height: normal;
+    font-size: 17px;
+  }
+  .banner-top .page-banner-price-description {
+    bottom: 0px;
+    color: #fd9700;
+    width: 90%;
+  }
+  /**/
+  .buttons-size179-1 {
+    width: 114px;
+    height: 38px;
+    font-size: 20px;
+  }
+  .buttons-size179-2 {
+    width: 98px;
+    height: 25px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-price .booking-sliders {
+    padding: 0;
+  }
+  .page-price .booking-sliders .book-slider-horizontal {
+    max-width: clamp(400px, calc(50.98vw + 7.96px), 530px);
+  }
+  .after-slider-buttons-wraper {
+    padding: 0 40px !important;
+    margin-right: 0;
+  }
+}
+@media (max-width: 768px) {
+
   /**/
   h2 {
     font-size: 35px;
@@ -361,65 +465,6 @@
     bottom: 0;
     right: 0;
   }
-  /**/
-  .page-banner {
-    height: calc(816px + 181px);
-  }
-  .page-banner-background {
-    padding: 21px 0;
-    height: 816px;
-  }
-  .page-banner-description {
-    margin-top: 329px;
-  }
-  .page-banner-buttons-wrapper {
-    margin-top: 45px;
-  }
-  .page-banner-button-wrapper-one,
-  .page-banner-button-wrapper-two {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 16px;
-    letter-spacing: -0.12px;
-    padding: 7px 9px;
-  }
-  .page-banner-button-wrapper-one {
-    box-shadow: none;
-    background-color: #0071e3;
-    color: #ffffff;
-    transition: all 0.5s ease;
-  }
-  .page-banner-button-wrapper-one:hover {
-    border: 1px #2997ff solid;
-    background: none;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
-    color: #0071e3;
-  }
-  .page-banner-button-wrapper-two {
-    background: none;
-    border: 1px #2997ff solid;
-    color: #2997ff;
-  }
-  .page-banner-button-wrapper-two:hover {
-    background: #2997ff;
-    border: 1px #2997ff solid;
-    color: #ffffff;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
-  }
-  .page-banner-price,
-  .page-banner-price-description {
-    font-family: Corbel;
-  }
-  .page-banner-price {
-    color: #1d1d1f;
-    margin-top: 8px;
-    font-size: 17px;
-  }
-  .page-banner-price-description {
-    color: #6e6e73;
-    line-height: 25px;
-    margin-top: 8px;
-  }
 
   .page-container {
     padding: 0 13px 0 24px;
@@ -504,7 +549,8 @@
   }
   .toggle-button {
     width: 221px;
-    height: 44px;
+    /*height: 44px;*/
+    height: auto;
     font-size: 12px;
   }
   .booking-sliders,
@@ -710,47 +756,7 @@
   max-width: 1721px;*/
     padding: 0;
   }
-  /**/
-  .liner {
-    background: linear-gradient(
-      180deg,
-      #0c1247 0%,
-      #28337d 28%,
-      #505dad 46%,
-      #7d8ed1 60%,
-      #aebce6 75%,
-      #efecff 90%,
-      #ffffff 100%
-    );
-  }
-  .banner-top {
-    height: 660px !important;
-  }
-  .banner-top-description {
-    bottom: 180px;
-  }
-  .banner-top-buttons-wrapper {
-    bottom: 100px;
-  }
-  .banner-top .page-banner-price {
-    bottom: 50px;
-  }
-  .banner-top .page-banner-price-description {
-    bottom: 0px;
-    color: #fd9700;
-    width: 90%;
-  }
-  /**/
-  .buttons-size179-1 {
-    width: 114px;
-    height: 38px;
-    font-size: 20px;
-  }
-  .buttons-size179-2 {
-    width: 98px;
-    height: 25px;
-    font-size: 20px;
-  }
+  
   /**/
   .header-dop-wrapper {
     flex-direction: column;
@@ -765,58 +771,55 @@
     margin: 0 auto 57px;
   }
   /**/
-  .page-price .booking-sliders .vertical-slider{
-   display: none;
+  .page-price .booking-sliders .vertical-slider {
+    display: none;
   }
   .page-price .booking-sliders,
-  .page-price .book-slider-horizontal{
+  .page-price .book-slider-horizontal {
     width: 100% !important;
   }
 }
 
-@media (min-width: 576px) and (max-width: 767px){
-.header-dop{
-  height: auto;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-.booking-section h2{
-  font-size:  clamp(60px, calc(20.134vw + -94.63px), 90px);
-}
-.after-slider-buttons-wraper{
-  padding: 0 30px !important;
-  margin-right: 0;
-}
+@media (min-width: 576px) and (max-width: 767px) {
+  .header-dop {
+    height: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  .booking-section h2 {
+    font-size: clamp(60px, calc(20.134vw + -94.63px), 90px);
+  }
+  .after-slider-buttons-wraper {
+    padding: 0 30px !important;
+    margin-right: 0;
+  }
   /**/
   .cards-container,
   .promotions-grid {
     grid-template-columns: 1fr;
-   
   }
-  .promotion-card{
- width: 100%;
+  .promotion-card {
+    width: 100%;
   }
-  .promotions-description{
+  .promotions-description {
     padding: 0;
-
   }
-      .promo-card-right img {
-        max-height: 200px;
-    }
-    .page-phone-basket{
-      flex-direction: column;
-    }
-
-    .after-slider-buttons-wraper p{
-  text-align: left;
-  max-width: 80%;
-
-}
-/**/
-.page-price .booking-sliders .book-slider-horizontal{
-   width: 100% !important;
+  .promo-card-right img {
+    max-height: 200px;
   }
-/**/
+  .page-phone-basket {
+    flex-direction: column;
+  }
+
+  .after-slider-buttons-wraper p {
+    text-align: left;
+    max-width: 80%;
+  }
+  /**/
+  .page-price .booking-sliders .book-slider-horizontal {
+    width: 100% !important;
+  }
+  /**/
   .vertical-slider {
     display: none;
   }
@@ -824,25 +827,25 @@
     padding-bottom: 20px;
   }
   .booking-sliders,
-  .booking-info{
+  .booking-info {
     width: 100% !important;
     height: auto !important;
   }
   .booking-info select,
   .booking-info input,
   .booking-info-price-block span,
-  .booking-info button{
+  .booking-info button {
     width: 50%;
     height: auto !important;
   }
-  .booking-info{
+  .booking-info {
     padding: 20px !important;
   }
-  .booking-sliders .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+  .booking-sliders .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after {
     overflow: hidden;
   }
-  .booking-info button{
+  .booking-info button {
     font-size: clamp(16px, calc(8.377vw + -32.25px), 32px);
   }
-
 }
