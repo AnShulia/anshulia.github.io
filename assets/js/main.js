@@ -347,7 +347,17 @@ document.addEventListener('click', e => {
   }
 });
 }
-
+//Попытка поддержки свг в фаерфокс
+function svgfetch(){
+  fetch('/assets/icons.svg')
+    .then(res => res.text())
+    .then(data => {
+      const div = document.createElement('div');
+      div.style.display = 'none';
+      div.innerHTML = data;
+      document.body.insertBefore(div, document.body.firstChild);
+    });
+}
 
 
 
@@ -357,6 +367,7 @@ accordionFooter();
 openaAnswer();
 openGeneralPopUp();
 openPromoDetails();
+svgfetch();
 
 }, false);
 window.addEventListener('load', () => {
